@@ -24,9 +24,9 @@ const Header = () => {
           {/* Logo MyDar */}
           <Link to="/" className="flex items-center flex-shrink-0" data-testid="header-logo">
             <img 
-              src="/mydar-logo.png" 
-              alt="MyDar" 
-              className="h-24 md:h-[7.5rem] w-auto"
+              src="/mamaison-logo.png" 
+              alt="MaMaison" 
+              className="h-16 md:h-20 w-auto"
             />
           </Link>
 

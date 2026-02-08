@@ -11,9 +11,9 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src="/mydar-logo.png" 
-                alt="MyDar" 
-                className="h-24 md:h-[7.5rem] w-auto"
+                src="/mamaison-logo.png" 
+                alt="MaMaison" 
+                className="h-16 md:h-20 w-auto"
               />
             </Link>
             <p className="text-sm mb-4">
@@ -104,7 +104,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} MyDar. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} MaMaison. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
