@@ -136,15 +136,15 @@ function DashboardLayout({ children }) {
         <NavLink to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
           {(sidebarOpen || isMobile) ? (
             <img 
-              src="/mydar-logo.png" 
-              alt="MyDar" 
-              className="h-16 w-auto"
+              src="/mamaison-logo.png" 
+              alt="MaMaison" 
+              className="h-14 w-auto"
             />
           ) : (
             <img 
-              src="/mydar-logo.png" 
-              alt="MyDar" 
-              className="h-12 w-auto"
+              src="/mamaison-logo.png" 
+              alt="MaMaison" 
+              className="h-10 w-auto"
             />
           )}
         </NavLink>
@@ -294,9 +294,9 @@ function DashboardLayout({ children }) {
             <Menu className="w-6 h-6" />
           </button>
           <img 
-            src="/mydar-logo.png" 
-            alt="MyDar" 
-            className="h-12 w-auto"
+            src="/mamaison-logo.png" 
+            alt="MaMaison" 
+            className="h-10 w-auto"
           />
           <div className="flex items-center gap-2">
             <NotificationBell />
