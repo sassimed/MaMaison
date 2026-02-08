@@ -1,0 +1,136 @@
+# =============================================================================
+# GitHub Actions - CI/CD Pipeline MyDar
+# =============================================================================
+# Ce fichier configure les tests automatiques avant chaque déploiement
+# 
+# Pour l'activer:
+# 1. Créer le dossier .github/workflows/ dans votre repo
+# 2. Y placer ce fichier sous le nom "ci.yml"
+# 3. Les tests s'exécuteront automatiquement à chaque push/PR
+# =============================================================================
+
+name: MyDar CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  MONGO_URL: mongodb://localhost:27017
+  DB_NAME: test_database
+
+jobs:
+  # ===================
+  # JOB 1: Tests Backend
+  # ===================
+  test-backend:
+    runs-on: ubuntu-latest
+    
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: 📦 Install dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+          pip install pytest pytest-asyncio httpx
+      
+      - name: 🧪 Run tests
+        run: |
+          cd backend
+          pytest tests/ -v --tb=short --junitxml=test-results.xml
+      
+      - name: 📊 Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: backend/test-results.xml
+
+  # ===================
+  # JOB 2: Tests Frontend
+  # ===================
+  test-frontend:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+      
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+          cache-dependency-path: frontend/yarn.lock
+      
+      - name: 📦 Install dependencies
+        run: |
+          cd frontend
+          yarn install --frozen-lockfile
+      
+      - name: 🔍 Lint check
+        run: |
+          cd frontend
+          yarn lint || true
+      
+      - name: 🏗️ Build check
+        run: |
+          cd frontend
+          yarn build
+
+  # ===================
+  # JOB 3: Deploy (après tests)
+  # ===================
+  deploy:
+    needs: [test-backend, test-frontend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+      
+      - name: 🚀 Deploy to production
+        run: |
+          echo "Déploiement vers la production..."
+          # Ajouter ici vos commandes de déploiement
+          # Ex: SSH, Docker push, Kubernetes apply, etc.
+      
+      - name: 🔄 Run migrations
+        run: |
+          echo "Exécution des migrations..."
+          # curl -X POST https://mydar.tn/api/migrations/init \
+          #      -H "X-Migration-Key: ${{ secrets.MIGRATION_KEY }}"
+
+  # ===================
+  # JOB 4: Notify
+  # ===================
+  notify:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: 📧 Notify on success
+        if: needs.deploy.result == 'success'
+        run: echo "✅ Déploiement réussi!"
+      
+      - name: 📧 Notify on failure
+        if: needs.deploy.result == 'failure'
+        run: echo "❌ Déploiement échoué!"

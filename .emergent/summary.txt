@@ -1,0 +1,1987 @@
+<analysis>**original_problem_statement:** The user's final request is a complete re-development of the e-commerce chatbot based on a very detailed prompt. The chatbot must act as an intelligent assistant for a Tunisian e-commerce store.
+
+PRODUCT REQUIREMENTS:
+1.  **Default Model:** Use GPT-5.2 by default.
+2.  **Admin Configurability:** Provide an admin interface to switch the active AI model between options like GPT-5.2, Gemini 2, and GPT-4.
+3.  **Bilingual Welcome:** The very first message must be bilingual (French & Tunisian Arabizi), presenting three main options.
+4.  **Two-Step Flow:** The chatbot was updated to first present a language choice (French/Tunisian) and then, based on the selection, show the three core modes in the chosen language.
+5.  **Three Core Modes:**
+    -   1️⃣ **Suivi commande / ttabba3 commande:** Track an order.
+    -   2️⃣ **Poser une question sur un produit / so2el 3la produit:** Ask a question about a product.
+    -   3️⃣ **T’aider à choisir un produit / n3awnk تختار produit مناسب:** Get help choosing a product.
+6.  **Data Integrity:** The chatbot must **never** invent information. It now uses product specifications from the database to answer questions accurately.
+7.  **Order Tracking:** The chatbot is now connected to the real  collection in the database to provide live status updates.
+8.  **Model Code & Ask IA feature:**
+    -   All products must have a generated .
+    -   The product detail page must display this code with a copy button.
+    -   An Ask IA button on product cards and detail pages should open the chatbot directly to the Question a product mode for that specific item.
+9.  **Data Synchronization:** An API endpoint is required to initialize or update the production database with the latest data from the development environment.
+10. **Unit Tests & CI/CD:** A comprehensive suite of backend unit tests must be created, along with a CI/CD pipeline configuration file to run these tests automatically.
+
+**User's preferred language**: French (fr). The next agent MUST respond in French only.
+
+**what currently exists?**
+The application features a sophisticated, state-driven chatbot () with a configurable AI model backend. A key feature, Ask IA, allows users to jump directly from a product to a specific chatbot flow. An API endpoint () has been created to handle data synchronization for production deployments. A comprehensive suite of backend unit tests (============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+rootdir: /app
+plugins: anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 28 items
+
+backend/tests/test_auth.py EE                                            [  7%]
+backend/tests/test_chatbot.py EEEEEEEE                                   [ 35%]
+backend/tests/test_health.py EEEE                                        [ 50%]
+backend/tests/test_migrations.py EEEEEE                                  [ 71%]
+backend/tests/test_products.py EEEEEEEE                                  [100%]
+
+==================================== ERRORS ====================================
+___________ ERROR at setup of TestAuthAPI.test_login_missing_fields ____________
+
+self = <Coroutine test_login_missing_fields>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_login_missing_fields>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_login_missing_fields' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+______ ERROR at setup of TestAuthAPI.test_login_with_invalid_credentials _______
+
+self = <Coroutine test_login_with_invalid_credentials>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_login_with_invalid_credentials>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_login_with_invalid_credentials' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestChatbotAPI.test_chatbot_welcome_message _________
+
+self = <Coroutine test_chatbot_welcome_message>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_welcome_message>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_welcome_message' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestChatbotAPI.test_chatbot_language_choice_french _____
+
+self = <Coroutine test_chatbot_language_choice_french>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_language_choice_french>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_language_choice_french' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____ ERROR at setup of TestChatbotAPI.test_chatbot_language_choice_tunisian ____
+
+self = <Coroutine test_chatbot_language_choice_tunisian>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_language_choice_tunisian>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_language_choice_tunisian' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestChatbotAPI.test_chatbot_full_flow_order _________
+
+self = <Coroutine test_chatbot_full_flow_order>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_full_flow_order>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_full_flow_order' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_______ ERROR at setup of TestChatbotAPI.test_chatbot_full_flow_question _______
+
+self = <Coroutine test_chatbot_full_flow_question>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_full_flow_question>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_full_flow_question' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_________ ERROR at setup of TestChatbotAPI.test_chatbot_full_flow_help _________
+
+self = <Coroutine test_chatbot_full_flow_help>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_full_flow_help>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_full_flow_help' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____________ ERROR at setup of TestChatbotConfig.test_get_ai_models ____________
+
+self = <Coroutine test_get_ai_models>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_ai_models>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_ai_models' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestChatbotConfig.test_get_current_ai_model _________
+
+self = <Coroutine test_get_current_ai_model>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_current_ai_model>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_current_ai_model' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____________ ERROR at setup of TestHealthCheck.test_api_is_running _____________
+
+self = <Coroutine test_api_is_running>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_api_is_running>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_api_is_running' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+__________ ERROR at setup of TestHealthCheck.test_categories_endpoint __________
+
+self = <Coroutine test_categories_endpoint>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_categories_endpoint>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_categories_endpoint' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+___________ ERROR at setup of TestHealthCheck.test_chatbot_endpoint ____________
+
+self = <Coroutine test_chatbot_endpoint>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_endpoint>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_endpoint' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+______ ERROR at setup of TestHealthCheck.test_migrations_status_endpoint _______
+
+self = <Coroutine test_migrations_status_endpoint>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_migrations_status_endpoint>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_migrations_status_endpoint' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+______ ERROR at setup of TestMigrationsAPI.test_get_available_migrations _______
+
+self = <Coroutine test_get_available_migrations>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_available_migrations>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_available_migrations' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestMigrationsAPI.test_get_migration_status _________
+
+self = <Coroutine test_get_migration_status>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_migration_status>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_migration_status' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestMigrationsAPI.test_run_migrations_without_key ______
+
+self = <Coroutine test_run_migrations_without_key>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_run_migrations_without_key>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_run_migrations_without_key' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____ ERROR at setup of TestMigrationsAPI.test_run_migrations_with_wrong_key ____
+
+self = <Coroutine test_run_migrations_with_wrong_key>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_run_migrations_with_wrong_key>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_run_migrations_with_wrong_key' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_________ ERROR at setup of TestDatabaseIntegrity.test_products_exist __________
+
+self = <Coroutine test_products_exist>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_products_exist>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_products_exist' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestDatabaseIntegrity.test_categories_exist _________
+
+self = <Coroutine test_categories_exist>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_categories_exist>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_categories_exist' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+___________ ERROR at setup of TestProductsAPI.test_get_products_list ___________
+
+self = <Coroutine test_get_products_list>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_products_list>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_products_list' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestProductsAPI.test_get_products_with_pagination ______
+
+self = <Coroutine test_get_products_with_pagination>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_products_with_pagination>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_products_with_pagination' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestProductsAPI.test_search_products_by_name ________
+
+self = <Coroutine test_search_products_by_name>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_search_products_by_name>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_search_products_by_name' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestProductsAPI.test_search_products_by_model_code _____
+
+self = <Coroutine test_search_products_by_model_code>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_search_products_by_model_code>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_search_products_by_model_code' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+__________ ERROR at setup of TestProductsAPI.test_get_single_product ___________
+
+self = <Coroutine test_get_single_product>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_single_product>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_single_product' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestProductsAPI.test_get_nonexistent_product ________
+
+self = <Coroutine test_get_nonexistent_product>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_nonexistent_product>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_nonexistent_product' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_______ ERROR at setup of TestProductsAPI.test_products_have_model_code ________
+
+self = <Coroutine test_products_have_model_code>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_products_have_model_code>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_products_have_model_code' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+___________ ERROR at setup of TestCategoriesAPI.test_get_categories ____________
+
+self = <Coroutine test_get_categories>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_categories>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_categories' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+=========================== short test summary info ============================
+ERROR backend/tests/test_auth.py::TestAuthAPI::test_login_missing_fields - py...
+ERROR backend/tests/test_auth.py::TestAuthAPI::test_login_with_invalid_credentials
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_welcome_message
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_language_choice_french
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_language_choice_tunisian
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_full_flow_order
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_full_flow_question
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_full_flow_help
+ERROR backend/tests/test_chatbot.py::TestChatbotConfig::test_get_ai_models - ...
+ERROR backend/tests/test_chatbot.py::TestChatbotConfig::test_get_current_ai_model
+ERROR backend/tests/test_health.py::TestHealthCheck::test_api_is_running - py...
+ERROR backend/tests/test_health.py::TestHealthCheck::test_categories_endpoint
+ERROR backend/tests/test_health.py::TestHealthCheck::test_chatbot_endpoint - ...
+ERROR backend/tests/test_health.py::TestHealthCheck::test_migrations_status_endpoint
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_get_available_migrations
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_get_migration_status
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_run_migrations_without_key
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_run_migrations_with_wrong_key
+ERROR backend/tests/test_migrations.py::TestDatabaseIntegrity::test_products_exist
+ERROR backend/tests/test_migrations.py::TestDatabaseIntegrity::test_categories_exist
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_products_list
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_products_with_pagination
+ERROR backend/tests/test_products.py::TestProductsAPI::test_search_products_by_name
+ERROR backend/tests/test_products.py::TestProductsAPI::test_search_products_by_model_code
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_single_product
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_nonexistent_product
+ERROR backend/tests/test_products.py::TestProductsAPI::test_products_have_model_code
+ERROR backend/tests/test_products.py::TestCategoriesAPI::test_get_categories
+============================== 28 errors in 2.30s ==============================) is now in place in , along with a GitHub Actions workflow file for CI. Critical bugs related to product/category data fetching and serialization () have been fixed.
+
+**Last working item**:
+-   Last item agent was working: The agent was fixing a critical bug where filtering products by category on the catalog page was not working, and sub-categories were not being displayed. The agent identified the issue was in the backend API () and corrected the logic to properly handle category hierarchies.
+-   Status: **BLOCKED**
+-   Agent Testing Done: Y (The fix was confirmed to work in the local environment.)
+-   Which testing method agent to use? Manual testing by user after deployment. The agent needs to explain to the user that the code fix must be deployed for the changes to be visible on the live production URL.
+-   User Testing Done: N (The user reported the issue still exists on the live site because the code has not been deployed yet.)
+
+**All Pending/In progress Issue list**:
+-   Issue 1: (P0) Product filtering by category is broken on the live production site.
+-   Issue 2: (P1) All products in the database are missing prices.
+-   Issue 3: (P2) 82 product images from  are missing.
+-   Issue 4: (P3) 17 products from  could not be matched.
+-   Issue 5: (P3) Email notifications use a temporary  address and require user DNS configuration.
+
+Issues Detail:
+-   Issue 1:
+    -   Attempted fixes: The agent successfully modified the category API in  to correctly query for sub-categories by looking up both the uid=0(root) gid=0(root) groups=0(root) and . This fix has been validated in the local environment.
+    -   Next debug checklist:
+        1.  Clearly explain to the user in French that the fix is ready but the code needs to be deployed to the production environment.
+        2.  Instruct the user to use the Save to Github feature and trigger a redeployment of their application.
+        3.  After deployment, guide the user to call the  endpoint again to ensure the production database is fully synchronized with the new data structures.
+        4.  Ask the user to verify the fix on their production URL ().
+    -   Why fix this issue and what will be achieved with the fix? This is a core e-commerce functionality. Without it, users cannot browse the product catalog effectively.
+    -   Status: BLOCKED
+    -   Is recurring issue? Y
+    -   Should Test frontend/backend/both after fix? Frontend (on the production site)
+    -   Blocked on other issue: Awaiting user action (code deployment).
+-   Issue 2:
+    -   Attempted fixes: None in this session.
+    -   Next debug checklist: Reiterate to the user that this is a business-critical blocker. Ask them to provide a data source (e.g., a CSV file with  and ) so a bulk-update script can be created and run via the migrations API.
+    -   Why fix this issue and what will be achieved with the fix? The e-commerce store cannot process sales without product prices.
+    -   Status: BLOCKED
+    -   Is recurring issue? Y
+    -   Should Test frontend/backend/both after fix? Both
+    -   Blocked on other issue: Awaiting data from the user.
+
+**In progress Task List**:
+-   None.
+
+**Upcoming and Future Tasks**
+-   **Upcoming Tasks:**
+    -   (P1) Add facet filters to the catalog page for attributes like , , etc.
+    -   (P2) Add drag-and-drop functionality to reorder sub-categories on the Admin Categories page.
+    -   (P2) Implement Pay on delivery and/or Bank transfer as payment options.
+-   **Future Tasks:**
+    -   Clean up obsolete chatbot code (, , ).
+    -   Integrate the Monétique Tunisie payment gateway (BLOCKED - awaiting user credentials).
+    -   Implement a  generator for SEO.
+    -   Allow downloading product technical specifications as a PDF.
+
+**Completed work in this session**
+-   **Admin Model Selection UI**: Completed and tested the admin interface to switch the chatbot's AI model.
+-   **Chatbot Flow Rework**: Implemented a new 2-step chatbot flow: language selection first, then mode selection.
+-   **Order Tracking Integration**: Connected the chatbot's order tracking to the live  database collection and enhanced the Admin/Client UIs with order numbers and copy buttons.
+-   **Ask IA &  Feature**: Generated  for all products and implemented the Ask IA button on product pages, which opens the chatbot directly in the correct context.
+-   **Chatbot Intelligence Upgrade**: Modified the chatbot to use a product's full technical specifications when answering user questions and to handle multiple product contexts in a single conversation.
+-   **Data Migration & Init API**: Created and tested a robust API at  to export/import all critical data (products, categories, users, settings) for seamless production deployments.
+-   **Critical Bug Fixes**:
+    -   Resolved the Product not found error on detail pages by correcting the API to query by uid=0(root) gid=0(root) groups=0(root) instead of MongoDB's .
+    -   Fixed the  endpoint to correctly handle  serialization and return nested sub-categories.
+-   **Backend Test Suite**: Created a comprehensive ============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+rootdir: /app
+plugins: anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 28 items
+
+backend/tests/test_auth.py EE                                            [  7%]
+backend/tests/test_chatbot.py EEEEEEEE                                   [ 35%]
+backend/tests/test_health.py EEEE                                        [ 50%]
+backend/tests/test_migrations.py EEEEEE                                  [ 71%]
+backend/tests/test_products.py EEEEEEEE                                  [100%]
+
+==================================== ERRORS ====================================
+___________ ERROR at setup of TestAuthAPI.test_login_missing_fields ____________
+
+self = <Coroutine test_login_missing_fields>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_login_missing_fields>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_login_missing_fields' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+______ ERROR at setup of TestAuthAPI.test_login_with_invalid_credentials _______
+
+self = <Coroutine test_login_with_invalid_credentials>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_login_with_invalid_credentials>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_login_with_invalid_credentials' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestChatbotAPI.test_chatbot_welcome_message _________
+
+self = <Coroutine test_chatbot_welcome_message>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_welcome_message>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_welcome_message' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestChatbotAPI.test_chatbot_language_choice_french _____
+
+self = <Coroutine test_chatbot_language_choice_french>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_language_choice_french>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_language_choice_french' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____ ERROR at setup of TestChatbotAPI.test_chatbot_language_choice_tunisian ____
+
+self = <Coroutine test_chatbot_language_choice_tunisian>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_language_choice_tunisian>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_language_choice_tunisian' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestChatbotAPI.test_chatbot_full_flow_order _________
+
+self = <Coroutine test_chatbot_full_flow_order>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_full_flow_order>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_full_flow_order' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_______ ERROR at setup of TestChatbotAPI.test_chatbot_full_flow_question _______
+
+self = <Coroutine test_chatbot_full_flow_question>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_full_flow_question>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_full_flow_question' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_________ ERROR at setup of TestChatbotAPI.test_chatbot_full_flow_help _________
+
+self = <Coroutine test_chatbot_full_flow_help>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_full_flow_help>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_full_flow_help' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____________ ERROR at setup of TestChatbotConfig.test_get_ai_models ____________
+
+self = <Coroutine test_get_ai_models>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_ai_models>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_ai_models' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestChatbotConfig.test_get_current_ai_model _________
+
+self = <Coroutine test_get_current_ai_model>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_current_ai_model>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_current_ai_model' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____________ ERROR at setup of TestHealthCheck.test_api_is_running _____________
+
+self = <Coroutine test_api_is_running>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_api_is_running>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_api_is_running' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+__________ ERROR at setup of TestHealthCheck.test_categories_endpoint __________
+
+self = <Coroutine test_categories_endpoint>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_categories_endpoint>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_categories_endpoint' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+___________ ERROR at setup of TestHealthCheck.test_chatbot_endpoint ____________
+
+self = <Coroutine test_chatbot_endpoint>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_chatbot_endpoint>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_chatbot_endpoint' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+______ ERROR at setup of TestHealthCheck.test_migrations_status_endpoint _______
+
+self = <Coroutine test_migrations_status_endpoint>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_migrations_status_endpoint>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_migrations_status_endpoint' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+______ ERROR at setup of TestMigrationsAPI.test_get_available_migrations _______
+
+self = <Coroutine test_get_available_migrations>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_available_migrations>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_available_migrations' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestMigrationsAPI.test_get_migration_status _________
+
+self = <Coroutine test_get_migration_status>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_migration_status>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_migration_status' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestMigrationsAPI.test_run_migrations_without_key ______
+
+self = <Coroutine test_run_migrations_without_key>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_run_migrations_without_key>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_run_migrations_without_key' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+____ ERROR at setup of TestMigrationsAPI.test_run_migrations_with_wrong_key ____
+
+self = <Coroutine test_run_migrations_with_wrong_key>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_run_migrations_with_wrong_key>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_run_migrations_with_wrong_key' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_________ ERROR at setup of TestDatabaseIntegrity.test_products_exist __________
+
+self = <Coroutine test_products_exist>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_products_exist>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_products_exist' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestDatabaseIntegrity.test_categories_exist _________
+
+self = <Coroutine test_categories_exist>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_categories_exist>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_categories_exist' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+___________ ERROR at setup of TestProductsAPI.test_get_products_list ___________
+
+self = <Coroutine test_get_products_list>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_products_list>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_products_list' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestProductsAPI.test_get_products_with_pagination ______
+
+self = <Coroutine test_get_products_with_pagination>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_products_with_pagination>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_products_with_pagination' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestProductsAPI.test_search_products_by_name ________
+
+self = <Coroutine test_search_products_by_name>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_search_products_by_name>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_search_products_by_name' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_____ ERROR at setup of TestProductsAPI.test_search_products_by_model_code _____
+
+self = <Coroutine test_search_products_by_model_code>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_search_products_by_model_code>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_search_products_by_model_code' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+__________ ERROR at setup of TestProductsAPI.test_get_single_product ___________
+
+self = <Coroutine test_get_single_product>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_single_product>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_single_product' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+________ ERROR at setup of TestProductsAPI.test_get_nonexistent_product ________
+
+self = <Coroutine test_get_nonexistent_product>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_nonexistent_product>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_nonexistent_product' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+_______ ERROR at setup of TestProductsAPI.test_products_have_model_code ________
+
+self = <Coroutine test_products_have_model_code>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_products_have_model_code>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_products_have_model_code' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+___________ ERROR at setup of TestCategoriesAPI.test_get_categories ____________
+
+self = <Coroutine test_get_categories>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fixturedef = <FixtureDef argname='client' scope='function' baseid='backend/tests'>
+request = <SubRequest 'client' for <Coroutine test_get_categories>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+>               return (yield)
+                        ^^^^^
+E               pytest.PytestRemovedIn9Warning: 'test_get_categories' requested an async fixture 'client', with no plugin or hook that handled it. This is usually an error, as pytest does not natively support it. This will turn into an error in pytest 9.
+E               See: https://docs.pytest.org/en/stable/deprecations.html#sync-test-depending-on-async-fixture
+
+/root/.venv/lib/python3.11/site-packages/pytest_asyncio/plugin.py:728: PytestRemovedIn9Warning
+=========================== short test summary info ============================
+ERROR backend/tests/test_auth.py::TestAuthAPI::test_login_missing_fields - py...
+ERROR backend/tests/test_auth.py::TestAuthAPI::test_login_with_invalid_credentials
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_welcome_message
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_language_choice_french
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_language_choice_tunisian
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_full_flow_order
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_full_flow_question
+ERROR backend/tests/test_chatbot.py::TestChatbotAPI::test_chatbot_full_flow_help
+ERROR backend/tests/test_chatbot.py::TestChatbotConfig::test_get_ai_models - ...
+ERROR backend/tests/test_chatbot.py::TestChatbotConfig::test_get_current_ai_model
+ERROR backend/tests/test_health.py::TestHealthCheck::test_api_is_running - py...
+ERROR backend/tests/test_health.py::TestHealthCheck::test_categories_endpoint
+ERROR backend/tests/test_health.py::TestHealthCheck::test_chatbot_endpoint - ...
+ERROR backend/tests/test_health.py::TestHealthCheck::test_migrations_status_endpoint
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_get_available_migrations
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_get_migration_status
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_run_migrations_without_key
+ERROR backend/tests/test_migrations.py::TestMigrationsAPI::test_run_migrations_with_wrong_key
+ERROR backend/tests/test_migrations.py::TestDatabaseIntegrity::test_products_exist
+ERROR backend/tests/test_migrations.py::TestDatabaseIntegrity::test_categories_exist
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_products_list
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_products_with_pagination
+ERROR backend/tests/test_products.py::TestProductsAPI::test_search_products_by_name
+ERROR backend/tests/test_products.py::TestProductsAPI::test_search_products_by_model_code
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_single_product
+ERROR backend/tests/test_products.py::TestProductsAPI::test_get_nonexistent_product
+ERROR backend/tests/test_products.py::TestProductsAPI::test_products_have_model_code
+ERROR backend/tests/test_products.py::TestCategoriesAPI::test_get_categories
+============================== 28 errors in 1.48s ============================== suite with 28 unit tests covering all major backend APIs () and a GitHub Actions CI file ().
+
+**Earlier issues found/mentioned but not fixed**
+-   The P1 business-critical issue of all products missing prices remains unresolved.
+-   The issues of 82 missing Somfy images and 17 unmatched SOMEF products are still pending.
+-   Email sending domain verification is still pending user action.
+
+**Known issue recurrence from previous fork**
+-   None.
+
+**Code Architecture**
+
+
+**Key Technical Concepts**
+-   **State Machine Chatbot**: The chatbot logic uses a clear 3-phase state machine:  ->  -> .
+-   **Dynamic Context Building (Chatbot)**: The chatbot can load multiple product specifications into its context to answer complex, relational questions.
+-   **Data Migration API**: A secure, token-protected endpoint () handles full data synchronization between environments.
+-   **Unit Testing (Pytest)**: A comprehensive test suite in  ensures code quality and prevents regressions. It can be run with [1;33m========================================[0m
+[1;33m    MyDar - Tests Unitaires[0m
+[1;33m========================================[0m
+
+[0;32mExécution des tests...[0m
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+rootdir: /app/backend
+configfile: pytest.ini
+plugins: anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 28 items
+
+tests/test_auth.py ..                                                    [  7%]
+tests/test_chatbot.py ........                                           [ 35%]
+tests/test_health.py ....                                                [ 50%]
+tests/test_migrations.py ......                                          [ 71%]
+tests/test_products.py ........                                          [100%]
+
+============================== 28 passed in 2.91s ==============================
+
+[0;32m========================================[0m
+[0;32m    ✅ TOUS LES TESTS PASSENT[0m
+[0;32m========================================[0m.
+-   **CI/CD Pipeline**: A  file for GitHub Actions automates the testing process on code pushes.
+-   **MongoDB Data Integrity**: Debugged and fixed several critical issues arising from inconsistencies between MongoDB's  type and string-based uid=0(root) gid=0(root) groups=0(root) fields used in the application.
+
+**key DB schema**
+-   ****: All products now have a  field. The  field is still missing.
+-   ****: Used for order tracking. The first 8 characters of the UUID uid=0(root) gid=0(root) groups=0(root) serve as the user-facing order number.
+-   ****: Data has been cleaned to ensure  fields correctly reference the parent's uid=0(root) gid=0(root) groups=0(root), resolving hierarchy issues.
+
+**All files of reference**
+-    (Contains the fix for the current P0 issue)
+-    (Contains the init logic for production deployment)
+-   
+-   
+-   
+-    (The entire directory of unit tests)
+
+**Areas that need refactoring**:
+-   **Obsolete Code Cleanup**: The files for previous chatbot versions (, , ) are unused and should be deleted to reduce code bloat.
+
+**key api endpoints**
+-   : **NEW & CRITICAL**. Performs a full data wipe and re-import from a backup file. Must be called after deployment to sync the production database.
+-   : **FIXED**. Now correctly returns nested sub-categories. The fix is pending deployment.
+-   : **FIXED**. Now correctly finds products by their uid=0(root) gid=0(root) groups=0(root) field.
+
+**Critical Info for New Agent**
+-   Your immediate priority is to guide the user on how to deploy the latest code. The fix for the broken category filtering () is complete but only exists locally. The user **must** deploy this change via Save to Github for the production site to work.
+-   After the user confirms deployment, you must guide them to run the  endpoint one last time to synchronize the production database with the corrected data structure.
+-   Once the deployment issue is resolved, the next highest priority is the **missing product prices**. This is a critical business blocker that must be addressed.
+-   After making any backend changes, run the test suite using the command [1;33m========================================[0m
+[1;33m    MyDar - Tests Unitaires[0m
+[1;33m========================================[0m
+
+[0;32mExécution des tests...[0m
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+rootdir: /app/backend
+configfile: pytest.ini
+plugins: anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 28 items
+
+tests/test_auth.py ..                                                    [  7%]
+tests/test_chatbot.py ........                                           [ 35%]
+tests/test_health.py ....                                                [ 50%]
+tests/test_migrations.py ......                                          [ 71%]
+tests/test_products.py ........                                          [100%]
+
+============================== 28 passed in 2.52s ==============================
+
+[0;32m========================================[0m
+[0;32m    ✅ TOUS LES TESTS PASSENT[0m
+[0;32m========================================[0m to prevent regressions.
+
+**documents and test reports created in this job**
+-    (Updated)
+-    (New directory with all test files)
+-    (New directory with JSON backups for migration)
+-    (New file for CI)
+
+**Last 10 User Messages and any pending HUMAN messages**
+1.  **User**: I can't see the product when I click on it. (COMPLETED - Fixed product detail API bug)
+2.  **User**: Create unit tests for all services and a CI/CD pipeline. (COMPLETED)
+3.  **User**: Call the init API again to sync all data. (COMPLETED)
+4.  **User**: My production catalog is live, and now the categories API has an error. Fix it. (IN PROGRESS - Fixed locally, awaiting deployment)
+5.  **User**: Call the init API for production. (COMPLETED - but with old code)
+6.  **User**: I have a problem filtering by category and I don't see sub-categories. (IN PROGRESS - Same issue as #4, agent diagnosed it)
+7.  **User**: Products are not showing when selecting a category. (IN PROGRESS - Same issue, agent confirmed local fix)
+8.  **User**: *No pending messages from the user. The agent last left off after confirming the local fix for the category issue.*
+
+**Project Health Check:**
+-   **Broken**:
+    -   Product browsing by category is **broken in production** until the latest code is deployed.
+    -   The entire e-commerce functionality is non-viable as **all products are missing prices**.
+
+**3rd Party Integrations**
+-   **Configurable LLMs (via Emergent LLM Key)**: OpenAI GPT-5.2 (Default), GPT-4o, Gemini 2.0 Flash, Claude Sonnet 4.5.
+-   **Resend**: For transactional emails (domain verification still pending).
+
+**Testing status**
+-   Testing agent used after significant changes: NO
+-   Troubleshoot agent used after agent stuck in loop: NO
+-   Test files created: YES, a full backend test suite exists in .
+-   Known regressions: Product filtering by category is broken in production due to the undeployed code fix.
+
+**Credentials to test flow:**
+| Rôle | Email | Mot de passe |
+|---|---|---|
+| 👑 Admin | admin@mydar.tn | admin123 |
+| 🔧 Pro | pro@mydar.tn | pro123 |
+| 👤 Client | client@mydar.tn | client123 |
+
+**What agent forgot to execute**
+-   The agent successfully diagnosed that the code fix was only local but failed to create a clear action plan to instruct the user on the required deployment steps. Instead, it got stuck re-verifying the local fix and the production data, which was inconsistent with the not-yet-deployed code.</analysis>

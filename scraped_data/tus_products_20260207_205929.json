@@ -1,0 +1,560 @@
+[
+  {
+    "source": "tus",
+    "source_url": "https://tus.com.tn/produits/lg-f86-1p/",
+    "name": "LG-F86-1P",
+    "sku": "",
+    "short_description": "Face Plate 86 ×86 mm",
+    "full_description": "LG-F86-1P are network wiring faceplates designed for indoor network cabling systems. The faceplates are engineered for easy installation of network modules (Cat5e/Cat6/Cat6A), providing a neat and professional cable outlet solution. With excellent impact resistance, ame retardancy and insulation performance, they are ideal for residential buildings, commercial o ces, hotels, data centers and other network wiring scenarios, ensuring stable signal transmission and long-term reliability.",
+    "meta_description": "Face Plate 86 ×86 mm",
+    "categories": [],
+    "brand": "Langbrug",
+    "images": [
+      "https://tus.com.tn/wp-content/uploads/2026/01/LG-P86-1P.jpg"
+    ],
+    "specifications": [],
+    "attributes": {},
+    "id": "8d14ce26-c460-474e-a97d-3617d864efec",
+    "scraped_at": "2026-02-07T20:58:02.870171+00:00",
+    "videos": [],
+    "downloaded_images": [
+      {
+        "original_url": "https://tus.com.tn/wp-content/uploads/2026/01/LG-P86-1P.jpg",
+        "local_path": "/app/scraped_data/images/tus_8d14ce26-c460-474e-a97d-3617d864efec_9825ee64.jpg",
+        "filename": "tus_8d14ce26-c460-474e-a97d-3617d864efec_9825ee64.jpg",
+        "size": 27398
+      }
+    ]
+  },
+  {
+    "source": "tus",
+    "source_url": "https://tus.com.tn/produits/hac-hdw1400trqp-a/",
+    "name": "HAC-HDW1400TRQP-A",
+    "sku": "",
+    "short_description": "4Mpx – Fixed lens 2.8 mm IR 25– IP67 – Built-in mic (-A)",
+    "full_description": "Camera Image Sensor 1/2.7 inch CMOS Max. Resolution 2560(H)×1440(V) Pixel 4MP Scanning System Progressive Electronic Shutter Speed PAL: 1/25s–1/100000s NTSC: 1/30s–1/100000s S/N Ratio >65dB Min. Illumination 0.02Lux/F2.0 30IRE, 0Lux IR on Illumination Distance 25m（82.0 ft） IR On/Off Control Auto; manual Illuminator Number 2（IR） Pan/Tilt/Rotation Range Pan: 0°–360° Tilt: 0°–78° Rotation: 0°–360° Lens Lens Type Fixed-focal Mount Type M12 Focal Length 2.8 mm; 3.6 mm Max. Aperture 2.8mm: F2.0 3.6mm: F2.0 Field of View 2.8mm: H: 105°;V: 56°;D: 125° 3.6mm: H: 84°;V: 47°;D:104° Iris Type Fixed iris Close Focus Distance 2.8mm: 0.7m(2.30 ft) 3.6mm: 1.1m(3.60 ft) DORI Distance Lens Detect Observe Recognize Identify 2.8 mm 49.8m 19.9m 10m 5m 3.6 mm 64m 25.6m 12.8m 6.4m Video Frame Rate CVI: PAL: 4M@25fps; 1080P@25fps; / NTSC: 4M@30fps; 1080P@30fps AHD: PAL: 4M@25fps; / NTSC: 4M@30fps TVI: PAL: 4M@25fps; / NTSC: 4M@30fps CVBS: PAL: 960H; / NTSC: 960H Resolution 4M (2560 × 1440); 1080P (1920 × 1080); 960 H (960 × 576/960 × 480) Day/Night Auto switch by ICR BLC BLC/HLC/DWDR WDR DWDR White Balance Auto; manual Gain Control Auto; manual Noise Reduction 2D NR Smart IR Yes Mirror Off/On Privacy Masking Off/On (8 area, rectangle) Certifications Certifications CE (EN55032:2015, EN 61000-3-2:2014, EN 61000-3-3:2013, EN55024:2010 A1:2015, EN 55035:2017, EN50130-4:2011 A1:2014) FCC (CFR 47 FCC Part 15 subpartB, ANSI C63.4-2014) UL (UL60950-1 CAN/CSA C22.2 No.60950-1) Port Video Output Video output choices of CVI/TVI/AHD/CVBS by one BNC port Audio Interface Built-in Mic (-A) Power Power Supply 12V ±30% DC Power Consumption Max 2.8W (12V DC, IR on) Environment Operating Temperature -40°C to 50°C (-40°F to 122°F);<95% (non-condensation) Storage Temperature -40°C to 50°C (-40°F to 122°F);< 95% (non-condensation) Protection Grade IP50 Structure Casing Plastic Dimensions Φ97.1 mm × 93.0 mm (Φ3.82″ × 3.66″) Net Weight 0.17 Kg (0.37lb)) Gross Weight 0.23 Kg (0.51lb)",
+    "meta_description": "4Mpx – Fixed lens 2.8 mm IR 25– IP67 - Built-in mic (-A)",
+    "categories": [],
+    "brand": "Dahua",
+    "images": [
+      "https://tus.com.tn/wp-content/uploads/2023/06/HAC-HDW1400TRQ-A.jpg"
+    ],
+    "specifications": [
+      {
+        "name": "Camera",
+        "specs": [
+          {
+            "key": "Image Sensor",
+            "value": "1/2.7 inch CMOS"
+          },
+          {
+            "key": "Max. Resolution",
+            "value": "2560(H)×1440(V)"
+          },
+          {
+            "key": "Pixel",
+            "value": "4MP"
+          },
+          {
+            "key": "Scanning System",
+            "value": "Progressive"
+          },
+          {
+            "key": "Electronic Shutter Speed",
+            "value": "PAL: 1/25s–1/100000s NTSC: 1/30s–1/100000s"
+          },
+          {
+            "key": "S/N Ratio",
+            "value": ">65dB"
+          },
+          {
+            "key": "Min. Illumination",
+            "value": "0.02Lux/F2.0 30IRE, 0Lux IR on"
+          },
+          {
+            "key": "Illumination Distance",
+            "value": "25m（82.0 ft）"
+          },
+          {
+            "key": "IR On/Off Control",
+            "value": "Auto; manual"
+          },
+          {
+            "key": "Illuminator Number",
+            "value": "2（IR）"
+          },
+          {
+            "key": "Pan/Tilt/Rotation Range",
+            "value": "Pan: 0°–360° Tilt: 0°–78° Rotation: 0°–360°"
+          }
+        ]
+      },
+      {
+        "name": "Lens",
+        "specs": [
+          {
+            "key": "Lens Type",
+            "value": "Fixed-focal"
+          },
+          {
+            "key": "Mount Type",
+            "value": "M12"
+          },
+          {
+            "key": "Focal Length",
+            "value": "2.8 mm; 3.6 mm"
+          },
+          {
+            "key": "Max. Aperture",
+            "value": "2.8mm: F2.0 3.6mm: F2.0"
+          },
+          {
+            "key": "Field of View",
+            "value": "2.8mm: H: 105°;V: 56°;D: 125° 3.6mm: H: 84°;V: 47°;D:104°"
+          },
+          {
+            "key": "Iris Type",
+            "value": "Fixed iris"
+          },
+          {
+            "key": "Close Focus Distance",
+            "value": "2.8mm: 0.7m(2.30 ft) 3.6mm: 1.1m(3.60 ft)"
+          },
+          {
+            "key": "DORI Distance",
+            "value": "Identify"
+          },
+          {
+            "key": "2.8 mm",
+            "value": "5m"
+          },
+          {
+            "key": "3.6 mm",
+            "value": "6.4m"
+          }
+        ]
+      },
+      {
+        "name": "Video",
+        "specs": [
+          {
+            "key": "Frame Rate",
+            "value": "CVI: PAL: 4M@25fps; 1080P@25fps; / NTSC: 4M@30fps; 1080P@30fps AHD: PAL: 4M@25fps; / NTSC: 4M@30fps TVI: PAL: 4M@25fps; / NTSC: 4M@30fps CVBS: PAL: 960H; / NTSC: 960H"
+          },
+          {
+            "key": "Resolution",
+            "value": "4M (2560 × 1440); 1080P (1920 × 1080); 960 H (960 × 576/960 × 480)"
+          },
+          {
+            "key": "Day/Night",
+            "value": "Auto switch by ICR"
+          },
+          {
+            "key": "BLC",
+            "value": "BLC/HLC/DWDR"
+          },
+          {
+            "key": "WDR",
+            "value": "DWDR"
+          },
+          {
+            "key": "White Balance",
+            "value": "Auto; manual"
+          },
+          {
+            "key": "Gain Control",
+            "value": "Auto; manual"
+          },
+          {
+            "key": "Noise Reduction",
+            "value": "2D NR"
+          },
+          {
+            "key": "Smart IR",
+            "value": "Yes"
+          },
+          {
+            "key": "Mirror",
+            "value": "Off/On"
+          },
+          {
+            "key": "Privacy Masking",
+            "value": "Off/On (8 area, rectangle)"
+          }
+        ]
+      },
+      {
+        "name": "Certifications",
+        "specs": [
+          {
+            "key": "Certifications",
+            "value": "CE (EN55032:2015, EN 61000-3-2:2014, EN 61000-3-3:2013, EN55024:2010 A1:2015, EN 55035:2017, EN50130-4:2011 A1:2014) FCC (CFR 47 FCC Part 15 subpartB, ANSI C63.4-2014) UL (UL60950-1 CAN/CSA C22.2 No.60950-1)"
+          }
+        ]
+      },
+      {
+        "name": "Port",
+        "specs": [
+          {
+            "key": "Video Output",
+            "value": "Video output choices of CVI/TVI/AHD/CVBS by one BNC port"
+          },
+          {
+            "key": "Audio Interface",
+            "value": "Built-in Mic (-A)"
+          }
+        ]
+      },
+      {
+        "name": "Power",
+        "specs": [
+          {
+            "key": "Power Supply",
+            "value": "12V ±30% DC"
+          },
+          {
+            "key": "Power Consumption",
+            "value": "Max 2.8W (12V DC, IR on)"
+          }
+        ]
+      },
+      {
+        "name": "Environment",
+        "specs": [
+          {
+            "key": "Operating Temperature",
+            "value": "-40°C to 50°C (-40°F to 122°F);<95% (non-condensation)"
+          },
+          {
+            "key": "Storage Temperature",
+            "value": "-40°C to 50°C (-40°F to 122°F);< 95% (non-condensation)"
+          },
+          {
+            "key": "Protection Grade",
+            "value": "IP50"
+          }
+        ]
+      },
+      {
+        "name": "Structure",
+        "specs": [
+          {
+            "key": "Casing",
+            "value": "Plastic"
+          },
+          {
+            "key": "Dimensions",
+            "value": "Φ97.1 mm × 93.0 mm (Φ3.82″ × 3.66″)"
+          },
+          {
+            "key": "Net Weight",
+            "value": "0.17 Kg (0.37lb))"
+          },
+          {
+            "key": "Gross Weight",
+            "value": "0.23 Kg (0.51lb)"
+          }
+        ]
+      }
+    ],
+    "attributes": {
+      "Résolution": "4Mpx",
+      "Image Sensor": "–",
+      "Objectif": "2.8 mm",
+      "IR": "25",
+      "protection": "IP67",
+      "Built-in mic": "OUI"
+    },
+    "datasheet_url": "https://www.tus.com.tn/wp-content/uploads/woocommerce_uploads/2023/03/DH-HAC-HDW1400TRQP-A-8vpadu.pdf",
+    "id": "3f82ac65-bbf5-4230-a0f0-3b3c3da8cc29",
+    "scraped_at": "2026-02-07T20:58:04.183919+00:00",
+    "videos": [],
+    "downloaded_images": [
+      {
+        "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/HAC-HDW1400TRQ-A.jpg",
+        "local_path": "/app/scraped_data/images/tus_3f82ac65-bbf5-4230-a0f0-3b3c3da8cc29_98f28400.jpg",
+        "filename": "tus_3f82ac65-bbf5-4230-a0f0-3b3c3da8cc29_98f28400.jpg",
+        "size": 13499
+      }
+    ]
+  },
+  {
+    "source": "tus",
+    "source_url": "https://tus.com.tn/produits/cx-2/",
+    "name": "CX-2",
+    "sku": "",
+    "short_description": "Boite de Jonction Étanche pour camera de surveillance.",
+    "full_description": "Boite de Jonction Étanche pour camera de surveillance; Modèle compatible avec tout type de caméra.",
+    "meta_description": "Boite de Jonction Étanche pour camera de surveillance.",
+    "categories": [],
+    "brand": "Accessoires",
+    "images": [
+      "https://tus.com.tn/wp-content/uploads/2023/06/CX-2.jpg"
+    ],
+    "specifications": [],
+    "attributes": {},
+    "id": "fbed30ab-ea6f-47ad-88c2-70ff3bf91873",
+    "scraped_at": "2026-02-07T20:58:05.474849+00:00",
+    "videos": [],
+    "downloaded_images": [
+      {
+        "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/CX-2.jpg",
+        "local_path": "/app/scraped_data/images/tus_fbed30ab-ea6f-47ad-88c2-70ff3bf91873_9b9e5687.jpg",
+        "filename": "tus_fbed30ab-ea6f-47ad-88c2-70ff3bf91873_9b9e5687.jpg",
+        "size": 26841
+      }
+    ]
+  },
+  {
+    "source": "tus",
+    "source_url": "https://tus.com.tn/produits/xvr5108hs-4kl-x/",
+    "name": "XVR5108HS-4KL-X",
+    "sku": "",
+    "short_description": "8 Channel Penta-brid 4K Compact 1U Digital Video Recorder H.265 /H.265 dual-stream video compression Supports HDCVI/AHD/TVI/CVBS/IP video inputs Max 12 channels IP camera inputs, each channel up to 8MP; Max 48Mbps Incoming Bandwidth Smart Search and Intelligent Video System",
+    "full_description": "System Main Processor Embedded Processor Operating System Embedded LINUX Video and Audio Analog Camera Input 8 Channel, BNC HDCVI Camera 4K, 6MP, 5MP, 4MP, 1080P@25/30fps, 720P@50/60fps, 720P@25/30fps AHD Camera 5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps TVI Camera 5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps CVBS Camera PAL/NTSC IP Camera Input 8 4 Channel, each channel up to 8MP Audio In/Out 1/1, RCA Two-way Talk Reuse audio in/out, RCA Recording Compression H.265 /H.265/H.264 /H.264 Resolution 4K, 6MP, 5MP, 4MP, 3MP, 4M-N, 1080P, 720P, 960H, D1, CIF Record Rate Main stream: 4K(1~7fps); 6MP(1~10fps); 5MP(1~12fps); 4MP/3MP(1~15fps); 4M-N/1080P/720P/960H/D1/CIF(1~25/30fps) Sub stream:960H(1~15fps); D1/CIF(1~25/30fps) Bit Rate 32Kbps ~ 6144Kbps Per Channel Record Mode Manual, Schedule (General, Continuous), MD (Video detection: Motion Detection, Video Loss, Tampering), Alarm, Stop Record Interval 1 ~ 60 min (default: 60 min), Pre-record: 1 ~ 30 sec, Post-record: 10 ~ 300 sec Audio Compression AAC(only for the 1st channel), G.711A, G.711U, PCM Audio Sample Rate 8KHz, 16 bit Per Channel Audio Bit Rate 64Kbps Per Channel Display Interface 1 HDMI, 1 VGA Resolution HDMI:3840×2160, 2560×1440, 1920×1080, 1280×1024, 1280×720 VGA: 1920×1080, 1280×1024, 1280×720 Multi-screen Display When IP extension mode not enabled: 1/4/8/9 When IP extension mode enabled: 1/4/8/9/16 OSD Camera title, Time, Video loss, Camera lock, Motion detection, Recording Network Interface 1 RJ-45 Port (1000M) Network Function HTTP, HTTPS, TCP/IP, IPv4/IPv6, Wi-Fi, 3G/4G, UPnP, RTSP, UDP, SMTP, NTP, DHCP, DNS, IP Filter, PPPoE,DDNS, FTP, Alarm Server, P2P,IP Search (Supports IP camera, DVR, NVS, etc.) Max. User Access 128 users Smart Phone iPhone, iPad, Android Interoperability ONVIF 16.12, CGI Conformant",
+    "meta_description": "8 Channel Penta-brid 4K Compact 1U Digital Video Recorder H.265 /H.265 dual-stream video compression Supports HDCVI/AHD/TVI/CVBS/IP video inputs Max 12 channels IP camera inputs, each channel up to 8MP; Max 48Mbps Incoming Bandwidth Smart Search and Intelligent Video System",
+    "categories": [],
+    "brand": "Dahua",
+    "images": [
+      "https://tus.com.tn/wp-content/uploads/2023/06/XVR5108HS-4KL-X.jpg"
+    ],
+    "specifications": [
+      {
+        "name": "System",
+        "specs": [
+          {
+            "key": "Main Processor",
+            "value": "Embedded Processor"
+          },
+          {
+            "key": "Operating System",
+            "value": "Embedded LINUX"
+          }
+        ]
+      },
+      {
+        "name": "Video and Audio",
+        "specs": [
+          {
+            "key": "Analog Camera Input",
+            "value": "8 Channel, BNC"
+          },
+          {
+            "key": "HDCVI Camera",
+            "value": "4K, 6MP, 5MP, 4MP, 1080P@25/30fps, 720P@50/60fps, 720P@25/30fps"
+          },
+          {
+            "key": "AHD Camera",
+            "value": "5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps"
+          },
+          {
+            "key": "TVI Camera",
+            "value": "5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps"
+          },
+          {
+            "key": "CVBS Camera",
+            "value": "PAL/NTSC"
+          },
+          {
+            "key": "IP Camera Input",
+            "value": "8 4 Channel, each channel up to 8MP"
+          },
+          {
+            "key": "Audio In/Out",
+            "value": "1/1, RCA"
+          },
+          {
+            "key": "Two-way Talk",
+            "value": "Reuse audio in/out, RCA"
+          }
+        ]
+      },
+      {
+        "name": "Recording",
+        "specs": [
+          {
+            "key": "Compression",
+            "value": "H.265 /H.265/H.264 /H.264"
+          },
+          {
+            "key": "Resolution",
+            "value": "4K, 6MP, 5MP, 4MP, 3MP, 4M-N, 1080P, 720P, 960H, D1, CIF"
+          },
+          {
+            "key": "Record Rate",
+            "value": "Main stream: 4K(1~7fps); 6MP(1~10fps); 5MP(1~12fps); 4MP/3MP(1~15fps); 4M-N/1080P/720P/960H/D1/CIF(1~25/30fps) Sub stream:960H(1~15fps); D1/CIF(1~25/30fps)"
+          },
+          {
+            "key": "Bit Rate",
+            "value": "32Kbps ~ 6144Kbps Per Channel"
+          },
+          {
+            "key": "Record Mode",
+            "value": "Manual, Schedule (General, Continuous), MD (Video detection: Motion Detection, Video Loss, Tampering), Alarm, Stop"
+          },
+          {
+            "key": "Record Interval",
+            "value": "1 ~ 60 min (default: 60 min), Pre-record: 1 ~ 30 sec, Post-record: 10 ~ 300 sec"
+          },
+          {
+            "key": "Audio Compression",
+            "value": "AAC(only for the 1st channel), G.711A, G.711U, PCM"
+          },
+          {
+            "key": "Audio Sample Rate",
+            "value": "8KHz, 16 bit Per Channel"
+          },
+          {
+            "key": "Audio Bit Rate",
+            "value": "64Kbps Per Channel"
+          }
+        ]
+      },
+      {
+        "name": "Display",
+        "specs": [
+          {
+            "key": "Interface",
+            "value": "1 HDMI, 1 VGA"
+          },
+          {
+            "key": "Resolution",
+            "value": "HDMI:3840×2160, 2560×1440, 1920×1080, 1280×1024, 1280×720 VGA: 1920×1080, 1280×1024, 1280×720"
+          },
+          {
+            "key": "Multi-screen Display",
+            "value": "When IP extension mode not enabled: 1/4/8/9 When IP extension mode enabled: 1/4/8/9/16"
+          },
+          {
+            "key": "OSD",
+            "value": "Camera title, Time, Video loss, Camera lock, Motion detection, Recording"
+          }
+        ]
+      },
+      {
+        "name": "Network",
+        "specs": [
+          {
+            "key": "Interface",
+            "value": "1 RJ-45 Port (1000M)"
+          },
+          {
+            "key": "Network Function",
+            "value": "HTTP, HTTPS, TCP/IP, IPv4/IPv6, Wi-Fi, 3G/4G, UPnP, RTSP, UDP, SMTP, NTP, DHCP, DNS, IP Filter, PPPoE,DDNS, FTP, Alarm Server, P2P,IP Search (Supports IP camera, DVR, NVS, etc.)"
+          },
+          {
+            "key": "Max. User Access",
+            "value": "128 users"
+          },
+          {
+            "key": "Smart Phone",
+            "value": "iPhone, iPad, Android"
+          },
+          {
+            "key": "Interoperability",
+            "value": "ONVIF 16.12, CGI Conformant"
+          }
+        ]
+      }
+    ],
+    "attributes": {
+      "video": "4kHDMI, coax, H265, Lite, P2P, Plug-play"
+    },
+    "id": "c7737c86-cf2f-446e-991e-5474463d070d",
+    "scraped_at": "2026-02-07T20:58:06.813059+00:00",
+    "videos": [],
+    "downloaded_images": [
+      {
+        "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/XVR5108HS-4KL-X.jpg",
+        "local_path": "/app/scraped_data/images/tus_c7737c86-cf2f-446e-991e-5474463d070d_6c89c9d3.jpg",
+        "filename": "tus_c7737c86-cf2f-446e-991e-5474463d070d_6c89c9d3.jpg",
+        "size": 36667
+      }
+    ]
+  },
+  {
+    "source": "tus",
+    "source_url": "https://tus.com.tn/produits/nkb1000-kb1000/",
+    "name": "NKB1000",
+    "sku": "",
+    "short_description": "Network Keyboard & Control Keyboard & Dome keyboard Keyboard to Control Dahua High Speed Dome (all models) Dahua Standalone DVR (KBD1000 & NKB1000 only) Dahua Network High Speed Dome (NKB1000 only) Network Video Server (NKB1000 only)",
+    "full_description": "Connection NKB1000: RS485, RS422, USB, RS232 & Network KB1000 : RS485, RS422 & USB Functions Three Dimensional Joystick Control of PTZ Functions Preset Position, Auto Scan, Auto Pan, Auto Tour & Pattern Auxiliary Functions Auxiliary Functions On-Screen Menu & User Operation Procedure Tips Connect to SmartPSS via USB (NKB1000 only) Model Model NKB1000 KBD1000 KB1000 General Keyboard Key panel Electromechanical Joystick 3-axis, vector-solving, with twisting, return to-center head Keyboard Connector RJ-45, RS232, RS485, RS422, USB RS232, RS485, RS422 RS485, RS422 Keyboard Communication Direct Mode, Network Mode Direct Mode Direct Mode Direct Mode Interface: RS232/RS485 DVR Protocol: DH2 Dome Protocol: DH-SD/PELCO-D/PELCO-P/PELCO-D1/PELCO-P, etc Network Mode Interface: RJ45 DVR/Network Dome: IP Address/Port/Protocol N/A N/A Display LCD, 75.2mm×33.85mm Environmental Power Supply Power adapter, input 100V~240V 50Hz/60Hz, output DC12V/1000mA Power Consumption 5W",
+    "meta_description": "Network Keyboard & Control Keyboard & Dome keyboard Keyboard to Control Dahua High Speed Dome (all models) Dahua Standalone DVR (KBD1000 & NKB1000 only) Dahua Network High Speed Dome (NKB1000 only) Network Video Server (NKB1000 only)",
+    "categories": [],
+    "brand": "Dahua",
+    "images": [
+      "https://tus.com.tn/wp-content/uploads/2023/06/NKB1000_KB1000-1.jpg"
+    ],
+    "specifications": [
+      {
+        "name": "Model",
+        "specs": [
+          {
+            "key": "Model",
+            "value": "KB1000"
+          }
+        ]
+      },
+      {
+        "name": "General",
+        "specs": [
+          {
+            "key": "Keyboard Key panel",
+            "value": "Electromechanical"
+          },
+          {
+            "key": "Joystick",
+            "value": "3-axis, vector-solving, with twisting, return to-center head"
+          },
+          {
+            "key": "Keyboard Connector",
+            "value": "RS485, RS422"
+          },
+          {
+            "key": "Keyboard Communication",
+            "value": "Direct Mode"
+          },
+          {
+            "key": "Direct Mode",
+            "value": "Interface: RS232/RS485 DVR Protocol: DH2 Dome Protocol: DH-SD/PELCO-D/PELCO-P/PELCO-D1/PELCO-P, etc"
+          },
+          {
+            "key": "Network Mode",
+            "value": "N/A"
+          },
+          {
+            "key": "Display",
+            "value": "LCD, 75.2mm×33.85mm"
+          }
+        ]
+      },
+      {
+        "name": "Environmental",
+        "specs": [
+          {
+            "key": "Power Supply",
+            "value": "Power adapter, input 100V~240V 50Hz/60Hz, output DC12V/1000mA"
+          },
+          {
+            "key": "Power Consumption",
+            "value": "5W"
+          }
+        ]
+      }
+    ],
+    "attributes": {
+      "video": "Linux, RJ45Port, USBControl, '-3axis"
+    },
+    "id": "1e8b9200-5b04-4b45-a858-594ff084a0f4",
+    "scraped_at": "2026-02-07T20:58:08.145618+00:00",
+    "videos": [],
+    "downloaded_images": [
+      {
+        "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/NKB1000_KB1000-1.jpg",
+        "local_path": "/app/scraped_data/images/tus_1e8b9200-5b04-4b45-a858-594ff084a0f4_89bbb8c6.jpg",
+        "filename": "tus_1e8b9200-5b04-4b45-a858-594ff084a0f4_89bbb8c6.jpg",
+        "size": 10195
+      }
+    ]
+  }
+]

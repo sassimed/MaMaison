@@ -1,0 +1,1757 @@
+{
+  "metadata": {
+    "scraped_at": "2026-02-07T20:59:29.164263+00:00",
+    "stats": {
+      "total_products": 20,
+      "total_images": 42,
+      "total_videos": 1,
+      "by_site": {
+        "tus": 5,
+        "telesys": 5,
+        "somfy": 5,
+        "somef": 5
+      }
+    },
+    "sites": [
+      "tus",
+      "telesys",
+      "somfy",
+      "somef"
+    ]
+  },
+  "products": {
+    "tus": [
+      {
+        "source": "tus",
+        "source_url": "https://tus.com.tn/produits/lg-f86-1p/",
+        "name": "LG-F86-1P",
+        "sku": "",
+        "short_description": "Face Plate 86 ×86 mm",
+        "full_description": "LG-F86-1P are network wiring faceplates designed for indoor network cabling systems. The faceplates are engineered for easy installation of network modules (Cat5e/Cat6/Cat6A), providing a neat and professional cable outlet solution. With excellent impact resistance, ame retardancy and insulation performance, they are ideal for residential buildings, commercial o ces, hotels, data centers and other network wiring scenarios, ensuring stable signal transmission and long-term reliability.",
+        "meta_description": "Face Plate 86 ×86 mm",
+        "categories": [],
+        "brand": "Langbrug",
+        "images": [
+          "https://tus.com.tn/wp-content/uploads/2026/01/LG-P86-1P.jpg"
+        ],
+        "specifications": [],
+        "attributes": {},
+        "id": "8d14ce26-c460-474e-a97d-3617d864efec",
+        "scraped_at": "2026-02-07T20:58:02.870171+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://tus.com.tn/wp-content/uploads/2026/01/LG-P86-1P.jpg",
+            "local_path": "/app/scraped_data/images/tus_8d14ce26-c460-474e-a97d-3617d864efec_9825ee64.jpg",
+            "filename": "tus_8d14ce26-c460-474e-a97d-3617d864efec_9825ee64.jpg",
+            "size": 27398
+          }
+        ]
+      },
+      {
+        "source": "tus",
+        "source_url": "https://tus.com.tn/produits/hac-hdw1400trqp-a/",
+        "name": "HAC-HDW1400TRQP-A",
+        "sku": "",
+        "short_description": "4Mpx – Fixed lens 2.8 mm IR 25– IP67 – Built-in mic (-A)",
+        "full_description": "Camera Image Sensor 1/2.7 inch CMOS Max. Resolution 2560(H)×1440(V) Pixel 4MP Scanning System Progressive Electronic Shutter Speed PAL: 1/25s–1/100000s NTSC: 1/30s–1/100000s S/N Ratio >65dB Min. Illumination 0.02Lux/F2.0 30IRE, 0Lux IR on Illumination Distance 25m（82.0 ft） IR On/Off Control Auto; manual Illuminator Number 2（IR） Pan/Tilt/Rotation Range Pan: 0°–360° Tilt: 0°–78° Rotation: 0°–360° Lens Lens Type Fixed-focal Mount Type M12 Focal Length 2.8 mm; 3.6 mm Max. Aperture 2.8mm: F2.0 3.6mm: F2.0 Field of View 2.8mm: H: 105°;V: 56°;D: 125° 3.6mm: H: 84°;V: 47°;D:104° Iris Type Fixed iris Close Focus Distance 2.8mm: 0.7m(2.30 ft) 3.6mm: 1.1m(3.60 ft) DORI Distance Lens Detect Observe Recognize Identify 2.8 mm 49.8m 19.9m 10m 5m 3.6 mm 64m 25.6m 12.8m 6.4m Video Frame Rate CVI: PAL: 4M@25fps; 1080P@25fps; / NTSC: 4M@30fps; 1080P@30fps AHD: PAL: 4M@25fps; / NTSC: 4M@30fps TVI: PAL: 4M@25fps; / NTSC: 4M@30fps CVBS: PAL: 960H; / NTSC: 960H Resolution 4M (2560 × 1440); 1080P (1920 × 1080); 960 H (960 × 576/960 × 480) Day/Night Auto switch by ICR BLC BLC/HLC/DWDR WDR DWDR White Balance Auto; manual Gain Control Auto; manual Noise Reduction 2D NR Smart IR Yes Mirror Off/On Privacy Masking Off/On (8 area, rectangle) Certifications Certifications CE (EN55032:2015, EN 61000-3-2:2014, EN 61000-3-3:2013, EN55024:2010 A1:2015, EN 55035:2017, EN50130-4:2011 A1:2014) FCC (CFR 47 FCC Part 15 subpartB, ANSI C63.4-2014) UL (UL60950-1 CAN/CSA C22.2 No.60950-1) Port Video Output Video output choices of CVI/TVI/AHD/CVBS by one BNC port Audio Interface Built-in Mic (-A) Power Power Supply 12V ±30% DC Power Consumption Max 2.8W (12V DC, IR on) Environment Operating Temperature -40°C to 50°C (-40°F to 122°F);<95% (non-condensation) Storage Temperature -40°C to 50°C (-40°F to 122°F);< 95% (non-condensation) Protection Grade IP50 Structure Casing Plastic Dimensions Φ97.1 mm × 93.0 mm (Φ3.82″ × 3.66″) Net Weight 0.17 Kg (0.37lb)) Gross Weight 0.23 Kg (0.51lb)",
+        "meta_description": "4Mpx – Fixed lens 2.8 mm IR 25– IP67 - Built-in mic (-A)",
+        "categories": [],
+        "brand": "Dahua",
+        "images": [
+          "https://tus.com.tn/wp-content/uploads/2023/06/HAC-HDW1400TRQ-A.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Camera",
+            "specs": [
+              {
+                "key": "Image Sensor",
+                "value": "1/2.7 inch CMOS"
+              },
+              {
+                "key": "Max. Resolution",
+                "value": "2560(H)×1440(V)"
+              },
+              {
+                "key": "Pixel",
+                "value": "4MP"
+              },
+              {
+                "key": "Scanning System",
+                "value": "Progressive"
+              },
+              {
+                "key": "Electronic Shutter Speed",
+                "value": "PAL: 1/25s–1/100000s NTSC: 1/30s–1/100000s"
+              },
+              {
+                "key": "S/N Ratio",
+                "value": ">65dB"
+              },
+              {
+                "key": "Min. Illumination",
+                "value": "0.02Lux/F2.0 30IRE, 0Lux IR on"
+              },
+              {
+                "key": "Illumination Distance",
+                "value": "25m（82.0 ft）"
+              },
+              {
+                "key": "IR On/Off Control",
+                "value": "Auto; manual"
+              },
+              {
+                "key": "Illuminator Number",
+                "value": "2（IR）"
+              },
+              {
+                "key": "Pan/Tilt/Rotation Range",
+                "value": "Pan: 0°–360° Tilt: 0°–78° Rotation: 0°–360°"
+              }
+            ]
+          },
+          {
+            "name": "Lens",
+            "specs": [
+              {
+                "key": "Lens Type",
+                "value": "Fixed-focal"
+              },
+              {
+                "key": "Mount Type",
+                "value": "M12"
+              },
+              {
+                "key": "Focal Length",
+                "value": "2.8 mm; 3.6 mm"
+              },
+              {
+                "key": "Max. Aperture",
+                "value": "2.8mm: F2.0 3.6mm: F2.0"
+              },
+              {
+                "key": "Field of View",
+                "value": "2.8mm: H: 105°;V: 56°;D: 125° 3.6mm: H: 84°;V: 47°;D:104°"
+              },
+              {
+                "key": "Iris Type",
+                "value": "Fixed iris"
+              },
+              {
+                "key": "Close Focus Distance",
+                "value": "2.8mm: 0.7m(2.30 ft) 3.6mm: 1.1m(3.60 ft)"
+              },
+              {
+                "key": "DORI Distance",
+                "value": "Identify"
+              },
+              {
+                "key": "2.8 mm",
+                "value": "5m"
+              },
+              {
+                "key": "3.6 mm",
+                "value": "6.4m"
+              }
+            ]
+          },
+          {
+            "name": "Video",
+            "specs": [
+              {
+                "key": "Frame Rate",
+                "value": "CVI: PAL: 4M@25fps; 1080P@25fps; / NTSC: 4M@30fps; 1080P@30fps AHD: PAL: 4M@25fps; / NTSC: 4M@30fps TVI: PAL: 4M@25fps; / NTSC: 4M@30fps CVBS: PAL: 960H; / NTSC: 960H"
+              },
+              {
+                "key": "Resolution",
+                "value": "4M (2560 × 1440); 1080P (1920 × 1080); 960 H (960 × 576/960 × 480)"
+              },
+              {
+                "key": "Day/Night",
+                "value": "Auto switch by ICR"
+              },
+              {
+                "key": "BLC",
+                "value": "BLC/HLC/DWDR"
+              },
+              {
+                "key": "WDR",
+                "value": "DWDR"
+              },
+              {
+                "key": "White Balance",
+                "value": "Auto; manual"
+              },
+              {
+                "key": "Gain Control",
+                "value": "Auto; manual"
+              },
+              {
+                "key": "Noise Reduction",
+                "value": "2D NR"
+              },
+              {
+                "key": "Smart IR",
+                "value": "Yes"
+              },
+              {
+                "key": "Mirror",
+                "value": "Off/On"
+              },
+              {
+                "key": "Privacy Masking",
+                "value": "Off/On (8 area, rectangle)"
+              }
+            ]
+          },
+          {
+            "name": "Certifications",
+            "specs": [
+              {
+                "key": "Certifications",
+                "value": "CE (EN55032:2015, EN 61000-3-2:2014, EN 61000-3-3:2013, EN55024:2010 A1:2015, EN 55035:2017, EN50130-4:2011 A1:2014) FCC (CFR 47 FCC Part 15 subpartB, ANSI C63.4-2014) UL (UL60950-1 CAN/CSA C22.2 No.60950-1)"
+              }
+            ]
+          },
+          {
+            "name": "Port",
+            "specs": [
+              {
+                "key": "Video Output",
+                "value": "Video output choices of CVI/TVI/AHD/CVBS by one BNC port"
+              },
+              {
+                "key": "Audio Interface",
+                "value": "Built-in Mic (-A)"
+              }
+            ]
+          },
+          {
+            "name": "Power",
+            "specs": [
+              {
+                "key": "Power Supply",
+                "value": "12V ±30% DC"
+              },
+              {
+                "key": "Power Consumption",
+                "value": "Max 2.8W (12V DC, IR on)"
+              }
+            ]
+          },
+          {
+            "name": "Environment",
+            "specs": [
+              {
+                "key": "Operating Temperature",
+                "value": "-40°C to 50°C (-40°F to 122°F);<95% (non-condensation)"
+              },
+              {
+                "key": "Storage Temperature",
+                "value": "-40°C to 50°C (-40°F to 122°F);< 95% (non-condensation)"
+              },
+              {
+                "key": "Protection Grade",
+                "value": "IP50"
+              }
+            ]
+          },
+          {
+            "name": "Structure",
+            "specs": [
+              {
+                "key": "Casing",
+                "value": "Plastic"
+              },
+              {
+                "key": "Dimensions",
+                "value": "Φ97.1 mm × 93.0 mm (Φ3.82″ × 3.66″)"
+              },
+              {
+                "key": "Net Weight",
+                "value": "0.17 Kg (0.37lb))"
+              },
+              {
+                "key": "Gross Weight",
+                "value": "0.23 Kg (0.51lb)"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "Résolution": "4Mpx",
+          "Image Sensor": "–",
+          "Objectif": "2.8 mm",
+          "IR": "25",
+          "protection": "IP67",
+          "Built-in mic": "OUI"
+        },
+        "datasheet_url": "https://www.tus.com.tn/wp-content/uploads/woocommerce_uploads/2023/03/DH-HAC-HDW1400TRQP-A-8vpadu.pdf",
+        "id": "3f82ac65-bbf5-4230-a0f0-3b3c3da8cc29",
+        "scraped_at": "2026-02-07T20:58:04.183919+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/HAC-HDW1400TRQ-A.jpg",
+            "local_path": "/app/scraped_data/images/tus_3f82ac65-bbf5-4230-a0f0-3b3c3da8cc29_98f28400.jpg",
+            "filename": "tus_3f82ac65-bbf5-4230-a0f0-3b3c3da8cc29_98f28400.jpg",
+            "size": 13499
+          }
+        ]
+      },
+      {
+        "source": "tus",
+        "source_url": "https://tus.com.tn/produits/cx-2/",
+        "name": "CX-2",
+        "sku": "",
+        "short_description": "Boite de Jonction Étanche pour camera de surveillance.",
+        "full_description": "Boite de Jonction Étanche pour camera de surveillance; Modèle compatible avec tout type de caméra.",
+        "meta_description": "Boite de Jonction Étanche pour camera de surveillance.",
+        "categories": [],
+        "brand": "Accessoires",
+        "images": [
+          "https://tus.com.tn/wp-content/uploads/2023/06/CX-2.jpg"
+        ],
+        "specifications": [],
+        "attributes": {},
+        "id": "fbed30ab-ea6f-47ad-88c2-70ff3bf91873",
+        "scraped_at": "2026-02-07T20:58:05.474849+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/CX-2.jpg",
+            "local_path": "/app/scraped_data/images/tus_fbed30ab-ea6f-47ad-88c2-70ff3bf91873_9b9e5687.jpg",
+            "filename": "tus_fbed30ab-ea6f-47ad-88c2-70ff3bf91873_9b9e5687.jpg",
+            "size": 26841
+          }
+        ]
+      },
+      {
+        "source": "tus",
+        "source_url": "https://tus.com.tn/produits/xvr5108hs-4kl-x/",
+        "name": "XVR5108HS-4KL-X",
+        "sku": "",
+        "short_description": "8 Channel Penta-brid 4K Compact 1U Digital Video Recorder H.265 /H.265 dual-stream video compression Supports HDCVI/AHD/TVI/CVBS/IP video inputs Max 12 channels IP camera inputs, each channel up to 8MP; Max 48Mbps Incoming Bandwidth Smart Search and Intelligent Video System",
+        "full_description": "System Main Processor Embedded Processor Operating System Embedded LINUX Video and Audio Analog Camera Input 8 Channel, BNC HDCVI Camera 4K, 6MP, 5MP, 4MP, 1080P@25/30fps, 720P@50/60fps, 720P@25/30fps AHD Camera 5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps TVI Camera 5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps CVBS Camera PAL/NTSC IP Camera Input 8 4 Channel, each channel up to 8MP Audio In/Out 1/1, RCA Two-way Talk Reuse audio in/out, RCA Recording Compression H.265 /H.265/H.264 /H.264 Resolution 4K, 6MP, 5MP, 4MP, 3MP, 4M-N, 1080P, 720P, 960H, D1, CIF Record Rate Main stream: 4K(1~7fps); 6MP(1~10fps); 5MP(1~12fps); 4MP/3MP(1~15fps); 4M-N/1080P/720P/960H/D1/CIF(1~25/30fps) Sub stream:960H(1~15fps); D1/CIF(1~25/30fps) Bit Rate 32Kbps ~ 6144Kbps Per Channel Record Mode Manual, Schedule (General, Continuous), MD (Video detection: Motion Detection, Video Loss, Tampering), Alarm, Stop Record Interval 1 ~ 60 min (default: 60 min), Pre-record: 1 ~ 30 sec, Post-record: 10 ~ 300 sec Audio Compression AAC(only for the 1st channel), G.711A, G.711U, PCM Audio Sample Rate 8KHz, 16 bit Per Channel Audio Bit Rate 64Kbps Per Channel Display Interface 1 HDMI, 1 VGA Resolution HDMI:3840×2160, 2560×1440, 1920×1080, 1280×1024, 1280×720 VGA: 1920×1080, 1280×1024, 1280×720 Multi-screen Display When IP extension mode not enabled: 1/4/8/9 When IP extension mode enabled: 1/4/8/9/16 OSD Camera title, Time, Video loss, Camera lock, Motion detection, Recording Network Interface 1 RJ-45 Port (1000M) Network Function HTTP, HTTPS, TCP/IP, IPv4/IPv6, Wi-Fi, 3G/4G, UPnP, RTSP, UDP, SMTP, NTP, DHCP, DNS, IP Filter, PPPoE,DDNS, FTP, Alarm Server, P2P,IP Search (Supports IP camera, DVR, NVS, etc.) Max. User Access 128 users Smart Phone iPhone, iPad, Android Interoperability ONVIF 16.12, CGI Conformant",
+        "meta_description": "8 Channel Penta-brid 4K Compact 1U Digital Video Recorder H.265 /H.265 dual-stream video compression Supports HDCVI/AHD/TVI/CVBS/IP video inputs Max 12 channels IP camera inputs, each channel up to 8MP; Max 48Mbps Incoming Bandwidth Smart Search and Intelligent Video System",
+        "categories": [],
+        "brand": "Dahua",
+        "images": [
+          "https://tus.com.tn/wp-content/uploads/2023/06/XVR5108HS-4KL-X.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "System",
+            "specs": [
+              {
+                "key": "Main Processor",
+                "value": "Embedded Processor"
+              },
+              {
+                "key": "Operating System",
+                "value": "Embedded LINUX"
+              }
+            ]
+          },
+          {
+            "name": "Video and Audio",
+            "specs": [
+              {
+                "key": "Analog Camera Input",
+                "value": "8 Channel, BNC"
+              },
+              {
+                "key": "HDCVI Camera",
+                "value": "4K, 6MP, 5MP, 4MP, 1080P@25/30fps, 720P@50/60fps, 720P@25/30fps"
+              },
+              {
+                "key": "AHD Camera",
+                "value": "5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps"
+              },
+              {
+                "key": "TVI Camera",
+                "value": "5MP, 4MP, 3MP, 1080P@25/30, 720P@25/30fps"
+              },
+              {
+                "key": "CVBS Camera",
+                "value": "PAL/NTSC"
+              },
+              {
+                "key": "IP Camera Input",
+                "value": "8 4 Channel, each channel up to 8MP"
+              },
+              {
+                "key": "Audio In/Out",
+                "value": "1/1, RCA"
+              },
+              {
+                "key": "Two-way Talk",
+                "value": "Reuse audio in/out, RCA"
+              }
+            ]
+          },
+          {
+            "name": "Recording",
+            "specs": [
+              {
+                "key": "Compression",
+                "value": "H.265 /H.265/H.264 /H.264"
+              },
+              {
+                "key": "Resolution",
+                "value": "4K, 6MP, 5MP, 4MP, 3MP, 4M-N, 1080P, 720P, 960H, D1, CIF"
+              },
+              {
+                "key": "Record Rate",
+                "value": "Main stream: 4K(1~7fps); 6MP(1~10fps); 5MP(1~12fps); 4MP/3MP(1~15fps); 4M-N/1080P/720P/960H/D1/CIF(1~25/30fps) Sub stream:960H(1~15fps); D1/CIF(1~25/30fps)"
+              },
+              {
+                "key": "Bit Rate",
+                "value": "32Kbps ~ 6144Kbps Per Channel"
+              },
+              {
+                "key": "Record Mode",
+                "value": "Manual, Schedule (General, Continuous), MD (Video detection: Motion Detection, Video Loss, Tampering), Alarm, Stop"
+              },
+              {
+                "key": "Record Interval",
+                "value": "1 ~ 60 min (default: 60 min), Pre-record: 1 ~ 30 sec, Post-record: 10 ~ 300 sec"
+              },
+              {
+                "key": "Audio Compression",
+                "value": "AAC(only for the 1st channel), G.711A, G.711U, PCM"
+              },
+              {
+                "key": "Audio Sample Rate",
+                "value": "8KHz, 16 bit Per Channel"
+              },
+              {
+                "key": "Audio Bit Rate",
+                "value": "64Kbps Per Channel"
+              }
+            ]
+          },
+          {
+            "name": "Display",
+            "specs": [
+              {
+                "key": "Interface",
+                "value": "1 HDMI, 1 VGA"
+              },
+              {
+                "key": "Resolution",
+                "value": "HDMI:3840×2160, 2560×1440, 1920×1080, 1280×1024, 1280×720 VGA: 1920×1080, 1280×1024, 1280×720"
+              },
+              {
+                "key": "Multi-screen Display",
+                "value": "When IP extension mode not enabled: 1/4/8/9 When IP extension mode enabled: 1/4/8/9/16"
+              },
+              {
+                "key": "OSD",
+                "value": "Camera title, Time, Video loss, Camera lock, Motion detection, Recording"
+              }
+            ]
+          },
+          {
+            "name": "Network",
+            "specs": [
+              {
+                "key": "Interface",
+                "value": "1 RJ-45 Port (1000M)"
+              },
+              {
+                "key": "Network Function",
+                "value": "HTTP, HTTPS, TCP/IP, IPv4/IPv6, Wi-Fi, 3G/4G, UPnP, RTSP, UDP, SMTP, NTP, DHCP, DNS, IP Filter, PPPoE,DDNS, FTP, Alarm Server, P2P,IP Search (Supports IP camera, DVR, NVS, etc.)"
+              },
+              {
+                "key": "Max. User Access",
+                "value": "128 users"
+              },
+              {
+                "key": "Smart Phone",
+                "value": "iPhone, iPad, Android"
+              },
+              {
+                "key": "Interoperability",
+                "value": "ONVIF 16.12, CGI Conformant"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "video": "4kHDMI, coax, H265, Lite, P2P, Plug-play"
+        },
+        "id": "c7737c86-cf2f-446e-991e-5474463d070d",
+        "scraped_at": "2026-02-07T20:58:06.813059+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/XVR5108HS-4KL-X.jpg",
+            "local_path": "/app/scraped_data/images/tus_c7737c86-cf2f-446e-991e-5474463d070d_6c89c9d3.jpg",
+            "filename": "tus_c7737c86-cf2f-446e-991e-5474463d070d_6c89c9d3.jpg",
+            "size": 36667
+          }
+        ]
+      },
+      {
+        "source": "tus",
+        "source_url": "https://tus.com.tn/produits/nkb1000-kb1000/",
+        "name": "NKB1000",
+        "sku": "",
+        "short_description": "Network Keyboard & Control Keyboard & Dome keyboard Keyboard to Control Dahua High Speed Dome (all models) Dahua Standalone DVR (KBD1000 & NKB1000 only) Dahua Network High Speed Dome (NKB1000 only) Network Video Server (NKB1000 only)",
+        "full_description": "Connection NKB1000: RS485, RS422, USB, RS232 & Network KB1000 : RS485, RS422 & USB Functions Three Dimensional Joystick Control of PTZ Functions Preset Position, Auto Scan, Auto Pan, Auto Tour & Pattern Auxiliary Functions Auxiliary Functions On-Screen Menu & User Operation Procedure Tips Connect to SmartPSS via USB (NKB1000 only) Model Model NKB1000 KBD1000 KB1000 General Keyboard Key panel Electromechanical Joystick 3-axis, vector-solving, with twisting, return to-center head Keyboard Connector RJ-45, RS232, RS485, RS422, USB RS232, RS485, RS422 RS485, RS422 Keyboard Communication Direct Mode, Network Mode Direct Mode Direct Mode Direct Mode Interface: RS232/RS485 DVR Protocol: DH2 Dome Protocol: DH-SD/PELCO-D/PELCO-P/PELCO-D1/PELCO-P, etc Network Mode Interface: RJ45 DVR/Network Dome: IP Address/Port/Protocol N/A N/A Display LCD, 75.2mm×33.85mm Environmental Power Supply Power adapter, input 100V~240V 50Hz/60Hz, output DC12V/1000mA Power Consumption 5W",
+        "meta_description": "Network Keyboard & Control Keyboard & Dome keyboard Keyboard to Control Dahua High Speed Dome (all models) Dahua Standalone DVR (KBD1000 & NKB1000 only) Dahua Network High Speed Dome (NKB1000 only) Network Video Server (NKB1000 only)",
+        "categories": [],
+        "brand": "Dahua",
+        "images": [
+          "https://tus.com.tn/wp-content/uploads/2023/06/NKB1000_KB1000-1.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Model",
+            "specs": [
+              {
+                "key": "Model",
+                "value": "KB1000"
+              }
+            ]
+          },
+          {
+            "name": "General",
+            "specs": [
+              {
+                "key": "Keyboard Key panel",
+                "value": "Electromechanical"
+              },
+              {
+                "key": "Joystick",
+                "value": "3-axis, vector-solving, with twisting, return to-center head"
+              },
+              {
+                "key": "Keyboard Connector",
+                "value": "RS485, RS422"
+              },
+              {
+                "key": "Keyboard Communication",
+                "value": "Direct Mode"
+              },
+              {
+                "key": "Direct Mode",
+                "value": "Interface: RS232/RS485 DVR Protocol: DH2 Dome Protocol: DH-SD/PELCO-D/PELCO-P/PELCO-D1/PELCO-P, etc"
+              },
+              {
+                "key": "Network Mode",
+                "value": "N/A"
+              },
+              {
+                "key": "Display",
+                "value": "LCD, 75.2mm×33.85mm"
+              }
+            ]
+          },
+          {
+            "name": "Environmental",
+            "specs": [
+              {
+                "key": "Power Supply",
+                "value": "Power adapter, input 100V~240V 50Hz/60Hz, output DC12V/1000mA"
+              },
+              {
+                "key": "Power Consumption",
+                "value": "5W"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "video": "Linux, RJ45Port, USBControl, '-3axis"
+        },
+        "id": "1e8b9200-5b04-4b45-a858-594ff084a0f4",
+        "scraped_at": "2026-02-07T20:58:08.145618+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://tus.com.tn/wp-content/uploads/2023/06/NKB1000_KB1000-1.jpg",
+            "local_path": "/app/scraped_data/images/tus_1e8b9200-5b04-4b45-a858-594ff084a0f4_89bbb8c6.jpg",
+            "filename": "tus_1e8b9200-5b04-4b45-a858-594ff084a0f4_89bbb8c6.jpg",
+            "size": 10195
+          }
+        ]
+      }
+    ],
+    "telesys": [
+      {
+        "source": "telesys",
+        "source_url": "https://telesys.com.tn/produit/switch-de-bureau-5-ports-gigabit-10-100-1000mbps-tp-link/",
+        "name": "Switch de bureau 5 ports Gigabit-10/100/1000Mbps / TP-Link",
+        "sku": "LS1005G",
+        "short_description": "Le switch non administrable de bureau 5 ports Gigabit de la série TP-Link LiteWave offre un moyen simple et abordable d’étendre votre réseau câblé. Il est facile à utiliser et fiable. Avec ces commutateurs plug-and-play, vous pouvez étendre instantanément vos connexions réseau à plusieurs appareils. Tous les ports prenent en charge Auto-MDI / MDIX, vous n’avez pas à vous soucier du type de câble à utiliser.",
+        "full_description": "Le switch non administrable de bureau 5 ports Gigabit de la série TP-Link LiteWave offre un moyen simple et abordable d’étendre votre réseau câblé. Il est facile à utiliser et fiable. Avec ces commutateurs plug-and-play, vous pouvez étendre instantanément vos connexions réseau à plusieurs appareils. Tous les ports prenent en charge Auto-MDI / MDIX, vous n’avez pas à vous soucier du type de câble à utiliser. Ce Switch non administrable de bureau 5 ports Gigabit-10/100/1000Mbps dispose de : 5 ports RJ45 10/100/1000 Mbps avec négociation automatique, prise en charge Auto-MDI / MDIX Technologie Green Ethernet qui économise de l’énergie Contrôle de flux IEEE 802.3X assure un transfert de données fiable Boîtier plastique, à poser sur un bureau ou montage mural Plug and play, aucune configuration requise Conception sans ventilateur qui assure un fonctionnement silencieux TELESYS est distributeur officiel de la marque TP-Link en Tunisie. Qui est TP-Link? TP-Link, leader mondial des solutions réseau WiFi depuis plus de 9 ans, offre des produits fiables et performants à un excellent rapport qualité-prix, distribués dans plus de 170 pays, pour des centaines de millions d’utilisateurs bénéficiant d’une connectivité optimale au quotidien. Passez au vert avec votre Ethernet La série LiteWave intègre une technologie économe en énergie, ce qui vous aide à économiser à la fois de l’énergie et de l’argent. La consommation électrique s’ajuste automatiquement en fonction de l’état de la liaison et de la longueur du câble. Ainsi, vous pouvez étendre votre réseau tout en réduisant votre empreinte carbone. En contribuant à préserver la planète et à baisser vos factures d’énergie, c’est une situation gagnant-gagnant !",
+        "meta_description": "Le switch non administrable de bureau 5 ports Gigabit  de la série TP-Link LiteWave offrent un moyen simple et abordable d’étendre votre réseau câblé. Ils sont faciles à utiliser et fiables.",
+        "categories": [],
+        "brand": "",
+        "images": [
+          "https://telesys.com.tn/wp-content/uploads/2024/05/LS1005G.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Caractéristiques",
+            "specs": [
+              {
+                "key": "Standards et Protocoles",
+                "value": "IEEE 802.3i/802.3u/ 802.3ab/802.3x"
+              },
+              {
+                "key": "Interface",
+                "value": "5× 10/100/1000 Mbps, Auto-Negotiation, Auto-MDI/MDIX Ports"
+              },
+              {
+                "key": "Nombre de ventilateurs",
+                "value": "Fanless"
+              },
+              {
+                "key": "Alimentation externe",
+                "value": "External Power Adapter (Output: 5VDC/0.6A)"
+              },
+              {
+                "key": "Dimensions (LxPxH)",
+                "value": "90 × 72 × 23 mm"
+              },
+              {
+                "key": "Consommation maximale",
+                "value": "3.7W"
+              },
+              {
+                "key": "Max dissipation thermique",
+                "value": "12.617 BTU/h"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "UGS": "",
+          "Catégorie": "",
+          "Marque": ""
+        },
+        "id": "64824f44-cc12-4d9c-ab17-a2bb6e2648e6",
+        "scraped_at": "2026-02-07T20:58:35.984407+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://telesys.com.tn/wp-content/uploads/2024/05/LS1005G.jpg",
+            "local_path": "/app/scraped_data/images/telesys_64824f44-cc12-4d9c-ab17-a2bb6e2648e6_86951dde.jpg",
+            "filename": "telesys_64824f44-cc12-4d9c-ab17-a2bb6e2648e6_86951dde.jpg",
+            "size": 73185
+          }
+        ]
+      },
+      {
+        "source": "telesys",
+        "source_url": "https://telesys.com.tn/produit/detecteur-interieur-sans-fil-bidirectionnelle-jetpaws4/",
+        "name": "Détecteur Intérieur Infrarouge Volumétriques Radio Bidirectionnelle Anti-Masquage Imminité contre les animaux , JET PA WS 4 / AVS",
+        "sku": "JETPAWS4",
+        "short_description": "Le Détecteur Infrarouge Volumétriques Radio Bidirectionnelle protège contre les animaux jusqu’à 24 kg. Il a une portée de 15 m et un angle de couverture de 90°. Avec une fonction anti-masquage IR actif, il est facile à programmer et offre une communication fiable jusqu’à 200 m. Il est compatible avec les unités de contrôle RAPTOR",
+        "full_description": "Le Détecteur Intérieur radio Infrarouge Volumétriques Bidirectionnelle Anti-Masquage Immunité contre les animaux assure une protection optimale. Il est insensible aux animaux jusqu’à 24 kg. Il offre une portée de 15 mètres et un angle de couverture de 90°. Avec son IR actif, il possède une fonction anti-masquage et une distance de détection réglable. Un accéléromètre détecte les signaux de désorientation. Ce détecteur fonctionne à une fréquence FM de 868 MHz. Il communique les alarmes, les états de survie, les modèles de capteur, l’état de la batterie et la température de fonctionnement jusqu’à 200 mètres en champ libre. La programmation est simplifiée grâce à l’auto-apprentissage via le panneau de contrôle, le PC ou l’application MY AVS APP. Alimenté par une pile lithium de 3,6 V 2,2 Ah, il offre une autonomie de 2 ans en mode de consommation réduite. Ses dimensions compactes sont de 65 x 120 x 39 mm. Ce détecteur est compatible avec les unités de contrôle RAPTOR. Détecteur Intérieur radio Infrarouge Volumétriques Bidirectionnelle Anti-Masquage Imminité contre les animaux , JETPAWS4 , de la marque AVS ELECTRONICS est disponible chez TELESYS. Qui est AVS ELECTRONICS ? Depuis 1974, AVS Electronics est un leader sur le marché de la sécurité électronique. En effet, ils conçoivent, développent et fabriquent des systèmes de sécurité électroniques dans leur siège productif. Grâce à un travail d’équipe solide, ils offrent ainsi une gamme de produits complète. De plus, leurs produits sont technologiquement à l’avant-garde, uniques, fiables et durables. Enfin, leur objectif est de créer bien-être et sécurité dans la vie quotidienne.",
+        "meta_description": "Détecteur Intérieur sans fil Infrarouge Volumétriques avec anti-masquage et immunité contre les animaux jusqu'à 24 kg. Portée de 15 m, angle de 90°.",
+        "categories": [],
+        "brand": "",
+        "images": [
+          "https://telesys.com.tn/wp-content/uploads/2024/06/jet-dt_Plan-de-travail-1-1-scaled.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Caractéristiques",
+            "specs": [
+              {
+                "key": "Immunité contre les animaux:",
+                "value": "0/12/24 kg"
+              },
+              {
+                "key": "Portée:",
+                "value": "15 m"
+              },
+              {
+                "key": "Angle de couverture:",
+                "value": "90°"
+              },
+              {
+                "key": "Anti-masquage:",
+                "value": "IR actif"
+              },
+              {
+                "key": "Distance de détection:",
+                "value": "Réglable"
+              },
+              {
+                "key": "Accéléromètre:",
+                "value": "Pour signaux de désorientation"
+              },
+              {
+                "key": "Fréquence:",
+                "value": "FM 868 MHz"
+              },
+              {
+                "key": "Portée de communication:",
+                "value": "Jusqu'à 200 m en champ libre"
+              },
+              {
+                "key": "Communications:",
+                "value": "Alarme, survie, modèle de capteur, état de la batterie, température de fonctionnement"
+              },
+              {
+                "key": "Programmation:",
+                "value": "Auto-apprentissage via panneau de contrôle, PC, MY AVS APP"
+              },
+              {
+                "key": "Alimentation:",
+                "value": "1 pile lithium 3,6 V 2,2 Ah"
+              },
+              {
+                "key": "Autonomie:",
+                "value": "2 ans en mode de consommation réduite"
+              },
+              {
+                "key": "Dimensions:",
+                "value": "65 x 120 x 39 mm"
+              },
+              {
+                "key": "Compatibilité:",
+                "value": "Unités de contrôle RAPTOR"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "UGS": "",
+          "Catégories": "",
+          "Marque": ""
+        },
+        "id": "cd271ea2-a7e0-4afb-8121-c04424e3a640",
+        "scraped_at": "2026-02-07T20:58:36.706444+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://telesys.com.tn/wp-content/uploads/2024/06/jet-dt_Plan-de-travail-1-1-scaled.jpg",
+            "local_path": "/app/scraped_data/images/telesys_cd271ea2-a7e0-4afb-8121-c04424e3a640_60f15376.jpg",
+            "filename": "telesys_cd271ea2-a7e0-4afb-8121-c04424e3a640_60f15376.jpg",
+            "size": 168968
+          }
+        ]
+      },
+      {
+        "source": "telesys",
+        "source_url": "https://telesys.com.tn/produit/sirene-alarme-ex/",
+        "name": "Sirène alarme EX / PALAZZOLI",
+        "sku": "900473EX",
+        "short_description": "Sirène d’alarme EX robuste en alliage d’aluminium, avec membrane vibrante.",
+        "full_description": "La Sirène alarme EX de PALAZZOLI est un produit robuste et fiable, conçu en alliage d’aluminium de haute qualité. Dotée d’une membrane vibrante, elle est parfaite pour les zones 2 (gaz) et 21-22 (poussière), grâce à sa protection IP66. Avec un courant nominal de 2,5A et une fréquence de 50/60Hz, elle fonctionne sous une tension de 230V. ( existe aussi en 24V et 110V) Cette sirène produit un niveau sonore élevé de 107/105dB à 1m, assurant une alerte claire et continue. De plus, elle est capable de fonctionner efficacement dans des températures allant de -20 à +40°C. Ce produit fait partie de la catégorie ATEX, garantissant sa conformité aux normes strictes pour les environnements explosifs. Fabriquée en Italie, la Sirène alarme EX combine savoir-faire et innovation. Avec son design pratique et ses performances fiables, elle est une solution idéale pour assurer la sécurité dans les zones à risques. La qualité et la durabilité de ce produit en font un choix de premier ordre pour les professionnels exigeants. Pour plus d’informations, vous pouvez consulter nos commerciaux dans les locaux de TELESYS. TELESYS est distributeur officiel de la marque Palazzoli en Tunisie. Palazzoli est le spécialiste de référence pour ses clients, se distinguant par son inspiration, son innovation et son caractère essentiel. La clarté des fonctions, la simplicité des projets, la qualité de fabrication et l’excellence du service guident les choix de Palazzoli. Les deux divisions dédiées, « systèmes électriques » et « éclairage », créent de nouveaux produits, y compris sur spécifications clients, pour les secteurs de l’industrie, de l’ATEX, des infrastructures et de la marine. L’entreprise est certifiée : ISO 9001, ISO 14001, ISO 45001.",
+        "meta_description": "La Sirène alarme EX de PALAZZOLI est un produit robuste et fiable, conçu en alliage d'aluminium de haute qualité. 2tache : Indice de protection IP66.",
+        "categories": [],
+        "brand": "",
+        "images": [
+          "https://telesys.com.tn/wp-content/uploads/2024/02/900473ex_Plan-de-travail-1-scaled.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Caractéristiques",
+            "specs": [
+              {
+                "key": "Courant nominal",
+                "value": "2,5A"
+              },
+              {
+                "key": "Fréquence",
+                "value": "50/60Hz"
+              },
+              {
+                "key": "Degré de protection",
+                "value": "IP IP66"
+              },
+              {
+                "key": "Poteaux",
+                "value": "2P+"
+              },
+              {
+                "key": "Tension de fonctionnement nominale",
+                "value": "24V"
+              },
+              {
+                "key": "Matériel de fabrication",
+                "value": "Alliage d'aluminium"
+              },
+              {
+                "key": "Type de trou",
+                "value": "M20"
+              },
+              {
+                "key": "Niveau sonore",
+                "value": "à 1 mt. 107/105dB"
+              },
+              {
+                "key": "Type de signal acoustique",
+                "value": "D – son continu selon la commande manuelle"
+              },
+              {
+                "key": "Température de travail opérationnelle",
+                "value": "20 T40"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "UGS": "",
+          "Catégorie": "",
+          "Marque": ""
+        },
+        "id": "908282b8-9c8b-4bd1-80f7-c3c4447b35af",
+        "scraped_at": "2026-02-07T20:58:37.429401+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://telesys.com.tn/wp-content/uploads/2024/02/900473ex_Plan-de-travail-1-scaled.jpg",
+            "local_path": "/app/scraped_data/images/telesys_908282b8-9c8b-4bd1-80f7-c3c4447b35af_72361b83.jpg",
+            "filename": "telesys_908282b8-9c8b-4bd1-80f7-c3c4447b35af_72361b83.jpg",
+            "size": 390843
+          }
+        ]
+      },
+      {
+        "source": "telesys",
+        "source_url": "https://telesys.com.tn/produit/platine-sol-double-2x2-mosaic-rectangulaire-172x86mm-inox-brosse/",
+        "name": "Platine Sol Double 2×2 Mosaic – Rectangulaire 172x86mm – Inox Brossé | LEGRAND",
+        "sku": "LG-089702",
+        "short_description": "Platine de sol rectangulaire en inox brossé, double poste (172x86mm), pour intégration de 4 modules Mosaic.",
+        "full_description": "La Platine Sol Double 2×2 Mosaic – Rectangulaire 172x86mm en inox brossé de LEGRAND se distingue par sa robustesse et son design élégant. Ce modèle rectangulaire, de dimensions 172x86mm, permet l’intégration de quatre modules Mosaic. Conçue pour une installation polyvalente, cette platine peut être fixée au sol, sur un plan de travail ou au mur. Elle est idéale pour distribuer à la fois énergie et information dans divers espaces. Sa résistance à l’eau et aux chocs (IP44, IK08) assure une durabilité accrue, même dans des environnements exigeants. Pour une touche supplémentaire, il est possible d’ajouter un voyant LED, créant un effet lumineux attractif. La sécurité n’est pas en reste : les vis torx utilisées dans la platine sol double limitent le démontage non autorisé. Ainsi, elle offre une tranquillité d’esprit accrue. Cette platine sol souble est un choix parfait pour ceux qui recherchent une solution fonctionnelle et esthétique. Avec ses caractéristiques techniques impressionnantes et sa polyvalence d’installation, la Platine Sol Double 2×2 Mosaic s’intègre harmonieusement dans les projets d’électricité des bâtiments modernes. Découvrez plus de détails et les autres produits de la gamme dans les locaux de TELESYS à Sfax, Tunis et Sousse. TELESYS est le distributeur officiel de la marque mondiale Legrand en Tunisie.",
+        "meta_description": "La Platine Sol Double Mosaic de LEGRAND se distingue par sa robustesse et son design élégant. Cette platine peut être fixée au sol ou un plan de travail.",
+        "categories": [],
+        "brand": "",
+        "images": [
+          "https://telesys.com.tn/wp-content/uploads/2024/02/LG-089702_Plan-de-travail-1-scaled.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Caractéristiques",
+            "specs": [
+              {
+                "key": "Platine",
+                "value": "rectangulaire double poste avec plaque extra-fine à équiper"
+              },
+              {
+                "key": "Inox brossé",
+                "value": "IP44 IK08"
+              },
+              {
+                "key": "Format rectangulaire",
+                "value": "172x86mm"
+              },
+              {
+                "key": "Mécanisme",
+                "value": "A équiper de mécanismes Mosaic équivalent à 4 modules (à l'exception des prises de courant standard britannique, américain, sud-africain, australien, chinois et multistandard)"
+              },
+              {
+                "key": "Accessoire voyant LED",
+                "value": "Devient lumineux par installation de l'accessoire voyant LED – Vis avec empreinte torx qui limite le démontage non souhaité"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "UGS": "",
+          "Catégorie": "",
+          "Marque": ""
+        },
+        "id": "8e26a6c5-a30b-4a0c-ba59-98d4747426ae",
+        "scraped_at": "2026-02-07T20:58:38.149779+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://telesys.com.tn/wp-content/uploads/2024/02/LG-089702_Plan-de-travail-1-scaled.jpg",
+            "local_path": "/app/scraped_data/images/telesys_8e26a6c5-a30b-4a0c-ba59-98d4747426ae_e0aa844d.jpg",
+            "filename": "telesys_8e26a6c5-a30b-4a0c-ba59-98d4747426ae_e0aa844d.jpg",
+            "size": 191446
+          }
+        ]
+      },
+      {
+        "source": "telesys",
+        "source_url": "https://telesys.com.tn/produit/contact-radio-bidirectionnelle-wic4/",
+        "name": "Contact radio bidirectionnelle – WIC4 / AVS",
+        "sku": "WIC4",
+        "short_description": "Contact radio bidirectionnel WIC4 avec une portée de 200 m, fréquence FM 868 MHz, et diverses communications. Réglages via panneau de contrôle, PC ou MY AVS APP. Entrées pour contacts filaires et interrupteur inertiel. Alimentation par pile lithium 3 Vdc CR123 avec autonomie de 2 ans. Compatible avec les unités centrales RAPTOR.",
+        "full_description": "Le contact radio bidirectionnel WIC4 assure une communication efficace et fiable avec les systèmes de contrôle. Il a une portée de 200 m en champ libre. Il utilise une fréquence de 868 MHz FM. Ce contact radio transmet des informations critiques. Celles-ci incluent l’alarme, l’effraction, la survie, le modèle de capteur, l’état de la batterie et la température de fonctionnement. Vous pouvez régler les paramètres de fonctionnement directement depuis le panneau de contrôle, un PC ou via l’application MY AVS APP. De plus, le WIC4 possède une entrée séparée pour les contacts filaires, un interrupteur inertiel ou une alarme avec compteur d’impulsions numériques. Il offre également une entrée secondaire pour contacts filaires. Alimenté par une pile lithium 3 Vdc type CR123, il assure une autonomie de 2 ans avec la fonction de consommation réduite activée. Ce dispositif est compatible avec les unités centrales RAPTOR. Il se présente dans un boîtier blanc compact de 35 x 110 x 31 mm. Le contact radio bidirectionnel WIC4 de la marque AVS ELECTRONICS est disponible chez TELESYS. Qui est AVS ELECTRONICS ? Depuis 1974, AVS Electronics est un leader sur le marché de la sécurité électronique. Ils conçoivent, développent et fabriquent des systèmes de sécurité électroniques dans leur siège productif. Grâce à un travail d’équipe solide, ils offrent une gamme de produits complète. Leurs produits sont technologiquement à l’avant-garde, uniques, fiables, et durables. Leur objectif est de créer bien-être et sécurité dans la vie quotidienne.",
+        "meta_description": "Contact radio bidirectionnel WIC4 avec une portée de 200 m, réglages via panneau de contrôle, PC ou MY AVS APP. Compatible avec les unités centrales RAPTOR.",
+        "categories": [],
+        "brand": "",
+        "images": [
+          "https://telesys.com.tn/wp-content/uploads/2024/06/wic4.jpg"
+        ],
+        "specifications": [
+          {
+            "name": "Caractéristiques",
+            "specs": [
+              {
+                "key": "Portée :",
+                "value": "jusqu'à 200 m en champ libre"
+              },
+              {
+                "key": "Fréquence :",
+                "value": "FM 868 MHz"
+              },
+              {
+                "key": "Communications :",
+                "value": "alarme, effraction, survie, modèle de capteur, état de la batterie, température de fonctionnement"
+              },
+              {
+                "key": "Réglage :",
+                "value": "paramètres de fonctionnement depuis le panneau de contrôle, PC ou MY AVS APP"
+              },
+              {
+                "key": "Entrée principale :",
+                "value": "contacts filaires, interrupteur inertiel ou alarme avec compteur d'impulsions numériques"
+              },
+              {
+                "key": "Entrée secondaire :",
+                "value": "contacts filaires"
+              },
+              {
+                "key": "Alimentation : 1",
+                "value": "pile 3 Vdc lithium 1.1 A type CR123"
+              },
+              {
+                "key": "Autonomie :",
+                "value": "2 ans en activant la fonction de consommation réduite"
+              },
+              {
+                "key": "Couleur :",
+                "value": "blanc"
+              },
+              {
+                "key": "Dimensions :",
+                "value": "35 x 110 x 31 mm (LxHxP)"
+              },
+              {
+                "key": "Compatibilité :",
+                "value": "unités centrales RAPTOR"
+              }
+            ]
+          }
+        ],
+        "attributes": {
+          "UGS": "",
+          "Catégorie": "",
+          "Marque": ""
+        },
+        "id": "ea479e71-203d-45e7-b168-f458f9b712bd",
+        "scraped_at": "2026-02-07T20:58:38.795519+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://telesys.com.tn/wp-content/uploads/2024/06/wic4.jpg",
+            "local_path": "/app/scraped_data/images/telesys_ea479e71-203d-45e7-b168-f458f9b712bd_946cc364.jpg",
+            "filename": "telesys_ea479e71-203d-45e7-b168-f458f9b712bd_946cc364.jpg",
+            "size": 71279
+          }
+        ]
+      }
+    ],
+    "somfy": [
+      {
+        "source": "somfy",
+        "source_url": "https://www.somfy.tn/produits/stores-d-interieur/tous-les-produits",
+        "name": "Nos solutions pour stores intérieurs",
+        "sku": "etchDomain",
+        "short_description": "",
+        "features": [],
+        "meta_description": "Songez à motoriser vos stores intérieurs pour protéger votre maison des regards indiscrets. Somfy dispose de systèmes motorisés pour tous les types de stores : stores à rouleau, romains, plissés, etc.",
+        "categories": [
+          "Particuliers",
+          "Volets roulants",
+          "Moteurs",
+          "Télécommandes",
+          "Récepteurs",
+          "Capteurs",
+          "Accessoires",
+          "Stores d'intérieur",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Rideaux",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Portes de garage",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Stores de terrasse",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Pergolas",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Portails",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Télécommandes et capteurs",
+          "Toutes les télécommandes",
+          "Tous les capteurs",
+          "Eclairage",
+          "Tous les produits pour l'éclairage",
+          "Idées et projets",
+          "Contactez-nous",
+          "FAQ",
+          "Téléchargements",
+          "Vidéos d'aide",
+          "Migration des Applis Connexoon vers TaHoma",
+          "Showroom",
+          "My account",
+          "Informations de contact",
+          "Particuliers",
+          "Accueil",
+          "Produits",
+          "Stores d'intérieur",
+          "Tous les produits",
+          "page1 (first page)",
+          "page2 (first page)",
+          "Suivant"
+        ],
+        "brand": "Somfy",
+        "images": [
+          "/common/img/library//AMS_Lukkien_2018_31_web.jpg",
+          "https://asset.somfy.com/300x300/Image/a6b9fe3c-af09-447b-a9c2-9e2ec7a5b208_EOLIS_RTS_star1.jpg",
+          "https://asset.somfy.com/300x300/Image/3b673a6c-82a0-4ba4-b0f7-e43056f5878b_Situo%201%20pure.jpg",
+          "https://asset.somfy.com/300x300/Image/99fa0a06-7fd0-4495-be4c-f135dd28dbde_SITUO_5_io_PURE_II.jpg",
+          "https://asset.somfy.com/300x300/Image/9354d2e1-40e8-4f00-b74d-4a54da521d79_CADRE_PURE1.jpg",
+          "https://asset.somfy.com/300x300/Image/bba409ef-2691-4024-9538-780e17a2c588_90150231.jpg",
+          "https://asset.somfy.com/300x300/Image/bc58e58c-9371-4c13-8e60-ac1fafff7901_SONESSE_40_WT_STAR_2.jpg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg"
+        ],
+        "specifications": [],
+        "id": "af73bd1e-c893-45cd-97e7-80967d40659d",
+        "scraped_at": "2026-02-07T20:58:43.551545+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/a6b9fe3c-af09-447b-a9c2-9e2ec7a5b208_EOLIS_RTS_star1.jpg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_0e142d95.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_0e142d95.jpg",
+            "size": 4826
+          },
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/3b673a6c-82a0-4ba4-b0f7-e43056f5878b_Situo%201%20pure.jpg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_2cb98eff.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_2cb98eff.jpg",
+            "size": 4388
+          },
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/99fa0a06-7fd0-4495-be4c-f135dd28dbde_SITUO_5_io_PURE_II.jpg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_37c83f1c.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_37c83f1c.jpg",
+            "size": 3619
+          },
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/9354d2e1-40e8-4f00-b74d-4a54da521d79_CADRE_PURE1.jpg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_bcedd00a.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_bcedd00a.jpg",
+            "size": 2780
+          },
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/bba409ef-2691-4024-9538-780e17a2c588_90150231.jpg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_a17a53d3.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_a17a53d3.jpg",
+            "size": 3972
+          },
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/bc58e58c-9371-4c13-8e60-ac1fafff7901_SONESSE_40_WT_STAR_2.jpg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_edde06ee.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_edde06ee.jpg",
+            "size": 5981
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_34036e25.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_34036e25.jpg",
+            "size": 6464
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_af73bd1e-c893-45cd-97e7-80967d40659d_c3da5971.jpg",
+            "filename": "somfy_af73bd1e-c893-45cd-97e7-80967d40659d_c3da5971.jpg",
+            "size": 6230
+          }
+        ]
+      },
+      {
+        "source": "somfy",
+        "source_url": "https://www.somfy.tn/produits/volets-roulants/recepteurs",
+        "name": "Récepteurs pour volets roulants",
+        "sku": "etchDomain",
+        "short_description": "",
+        "features": [],
+        "meta_description": "Interrupteur mural, télécommande pour un ou plusieurs équipements, télécommande de centralisation ou de programmation horaire, et box domotique. Trouvez votre télécommande.",
+        "categories": [
+          "Particuliers",
+          "Volets roulants",
+          "Moteurs",
+          "Télécommandes",
+          "Récepteurs",
+          "Capteurs",
+          "Accessoires",
+          "Stores d'intérieur",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Rideaux",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Portes de garage",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Stores de terrasse",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Pergolas",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Portails",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Télécommandes et capteurs",
+          "Toutes les télécommandes",
+          "Tous les capteurs",
+          "Eclairage",
+          "Tous les produits pour l'éclairage",
+          "Idées et projets",
+          "Contactez-nous",
+          "FAQ",
+          "Téléchargements",
+          "Vidéos d'aide",
+          "Migration des Applis Connexoon vers TaHoma",
+          "Showroom",
+          "My account",
+          "Informations de contact",
+          "Particuliers",
+          "Accueil",
+          "Produits",
+          "Volets roulants",
+          "Récepteurs"
+        ],
+        "brand": "Somfy",
+        "images": [
+          "/common/img/library//smoove-rs1002.jpg",
+          "https://www.somfy.tn/common/img/library//les-produits-volets-roulants-somfy1.jpg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg"
+        ],
+        "specifications": [],
+        "id": "43d20b9a-08c4-4a15-9966-9934456956ad",
+        "scraped_at": "2026-02-07T20:58:49.873911+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somfy.tn/common/img/library//les-produits-volets-roulants-somfy1.jpg",
+            "local_path": "/app/scraped_data/images/somfy_43d20b9a-08c4-4a15-9966-9934456956ad_b4cd6653.jpg",
+            "filename": "somfy_43d20b9a-08c4-4a15-9966-9934456956ad_b4cd6653.jpg",
+            "size": 88097
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_43d20b9a-08c4-4a15-9966-9934456956ad_34036e25.jpg",
+            "filename": "somfy_43d20b9a-08c4-4a15-9966-9934456956ad_34036e25.jpg",
+            "size": 6464
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_43d20b9a-08c4-4a15-9966-9934456956ad_c3da5971.jpg",
+            "filename": "somfy_43d20b9a-08c4-4a15-9966-9934456956ad_c3da5971.jpg",
+            "size": 6230
+          }
+        ]
+      },
+      {
+        "source": "somfy",
+        "source_url": "https://www.somfy.tn/produits/portes-de-garage/moteurs",
+        "name": "Motorisation porte de garage connectée",
+        "sku": "etchDomain",
+        "short_description": "",
+        "features": [],
+        "meta_description": "Nos motorisations sont compatibles avec la plupart des portes de garage : à bras pour porte de garage battante, à rail à chaîne ou à courroie pour porte de garage latérale.",
+        "categories": [
+          "Particuliers",
+          "Volets roulants",
+          "Moteurs",
+          "Télécommandes",
+          "Récepteurs",
+          "Capteurs",
+          "Accessoires",
+          "Stores d'intérieur",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Rideaux",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Portes de garage",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Stores de terrasse",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Pergolas",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Portails",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Télécommandes et capteurs",
+          "Toutes les télécommandes",
+          "Tous les capteurs",
+          "Eclairage",
+          "Tous les produits pour l'éclairage",
+          "Idées et projets",
+          "Contactez-nous",
+          "FAQ",
+          "Téléchargements",
+          "Vidéos d'aide",
+          "Migration des Applis Connexoon vers TaHoma",
+          "Showroom",
+          "My account",
+          "Informations de contact",
+          "Particuliers",
+          "Accueil",
+          "Produits",
+          "Portes de garage",
+          "Moteurs",
+          "page1 (first page)"
+        ],
+        "brand": "Somfy",
+        "images": [
+          "/common/img/library//DEXXO_PRO_star7.jpg",
+          "https://asset.somfy.com/300x300/Image/6ea3a30a-7b5f-46d5-950f-a05811b0b525_centreo1.jpg",
+          "https://asset.somfy.com/300x300/Image/c41e6572-1260-464f-ba99-7681bab69447_Dexxo%20compact%20LED_VUE_STAR%20Web.jpg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg"
+        ],
+        "specifications": [],
+        "id": "1cf9f9c8-766f-49a8-a38e-df1bd3db320a",
+        "scraped_at": "2026-02-07T20:58:51.240215+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/6ea3a30a-7b5f-46d5-950f-a05811b0b525_centreo1.jpg",
+            "local_path": "/app/scraped_data/images/somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_15f3e231.jpg",
+            "filename": "somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_15f3e231.jpg",
+            "size": 12739
+          },
+          {
+            "original_url": "https://asset.somfy.com/300x300/Image/c41e6572-1260-464f-ba99-7681bab69447_Dexxo%20compact%20LED_VUE_STAR%20Web.jpg",
+            "local_path": "/app/scraped_data/images/somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_c7bf4f17.jpg",
+            "filename": "somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_c7bf4f17.jpg",
+            "size": 9420
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_34036e25.jpg",
+            "filename": "somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_34036e25.jpg",
+            "size": 6464
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_c3da5971.jpg",
+            "filename": "somfy_1cf9f9c8-766f-49a8-a38e-df1bd3db320a_c3da5971.jpg",
+            "size": 6230
+          }
+        ]
+      },
+      {
+        "source": "somfy",
+        "source_url": "https://www.somfy.tn/fr-ac/produits/1216454/elixo-800-230v-rts",
+        "name": "ELIXO 800 230V RTS",
+        "sku": "lang",
+        "short_description": "Puissant, précis et sécuritaire pour motoriser les plus grandes portes coulissantes En savoir plus",
+        "features": [],
+        "meta_description": "Puissant, précis et sécuritaire pour motoriser les plus grandes portes coulissantes",
+        "categories": [
+          "Particuliers",
+          "Volets roulants",
+          "Moteurs",
+          "Télécommandes",
+          "Récepteurs",
+          "Capteurs",
+          "Accessoires",
+          "Stores d'intérieur",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Rideaux",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Portes de garage",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Stores de terrasse",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Pergolas",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Portails",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Télécommandes et capteurs",
+          "Toutes les télécommandes",
+          "Tous les capteurs",
+          "Eclairage",
+          "Tous les produits pour l'éclairage",
+          "Idées et projets",
+          "Contactez-nous",
+          "FAQ",
+          "Téléchargements",
+          "Vidéos d'aide",
+          "Migration des Applis Connexoon vers TaHoma",
+          "Showroom",
+          "My account",
+          "Informations de contact",
+          "Particuliers",
+          "Accueil",
+          "Produits",
+          "Portails",
+          "Tous les produits",
+          "ELIXO 800 230V RTS",
+          "Caractéristiques"
+        ],
+        "brand": "Somfy",
+        "images": [
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg"
+        ],
+        "specifications": [],
+        "id": "cdd59cc8-aebd-4660-96e8-4f35836c805e",
+        "scraped_at": "2026-02-07T20:58:53.425449+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_cdd59cc8-aebd-4660-96e8-4f35836c805e_34036e25.jpg",
+            "filename": "somfy_cdd59cc8-aebd-4660-96e8-4f35836c805e_34036e25.jpg",
+            "size": 6464
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_cdd59cc8-aebd-4660-96e8-4f35836c805e_c3da5971.jpg",
+            "filename": "somfy_cdd59cc8-aebd-4660-96e8-4f35836c805e_c3da5971.jpg",
+            "size": 6230
+          }
+        ]
+      },
+      {
+        "source": "somfy",
+        "source_url": "https://www.somfy.fr/produits/volets-et-brise-soleil/volets-roulants",
+        "name": "Volet roulant électrique",
+        "sku": "etchDomain",
+        "short_description": "",
+        "features": [],
+        "meta_description": "Découvrez les avantages d'un volet roulant électrique : Comment le piloter, les différents types de motorisation. On vous dit tout !",
+        "categories": [
+          "Particuliers",
+          "Professionnels",
+          "Solutions solaires",
+          "Maison connectée",
+          "Volets roulants",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Volet roulant solaire",
+          "⚙️Choisir votre moteur de volet roulant",
+          "Portails",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Pièces détachées",
+          "✔️ Choisir votre moteur de portail battant",
+          "✔️ Choisir votre moteur de portail coulissant",
+          "⚙️Configurateur pas à pas pour portails",
+          "Portes de garage",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Pièces détachées",
+          "⚙️Configurateur pas à pas pour garages",
+          "Visiophone",
+          "Tous les visiophones",
+          "Accessoires",
+          "⚙️Choisir le visiophone adpaté à votre besoin",
+          "Alarme connectée",
+          "Kits alarmes",
+          "Détecteurs et sirènes",
+          "Télécommandes",
+          "Télésurveillance",
+          "Choisir votre système d'alarme",
+          "Caméra connectée",
+          "Toutes les caméras",
+          "Chauffage",
+          "Tous les produits pour le chauffage",
+          "Stores de terrasse",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Volets battants",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Pièces détachées",
+          "Télécommandes et capteurs",
+          "Toutes les télécommandes",
+          "Tous les capteurs",
+          "Fenêtre connectée",
+          "Eclairage",
+          "Tous les produits pour l'éclairage",
+          "Stores d'intérieur",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Brise-soleil orientables",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Rideaux",
+          "Moteurs",
+          "Télécommandes",
+          "Accessoires",
+          "Pergolas",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Stores extérieurs verticaux",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Accessoires",
+          "Store solaire extérieur",
+          "Ecran de projection",
+          "Moteurs",
+          "Télécommandes",
+          "Vérandas",
+          "Moteurs",
+          "Télécommandes",
+          "Capteurs",
+          "Volets et brise-soleil",
+          "Portes de garage et portails",
+          "Caméras et alarmes",
+          "Terrasse",
+          "Automatismes et maison connectée",
+          "Chauffage et éclairage",
+          "Stores et rideaux",
+          "Je m'informe",
+          "Accompagnement et services",
+          "Comment ça fonctionne",
+          "Compatibilités",
+          "Primes et aides",
+          "Je m'inspire",
+          "Ecosystème maison connectée",
+          "Habitat responsable et durable",
+          "Je me prépare",
+          "Faire des économies",
+          "Gagner en confort",
+          "Piloter mes équipements",
+          "Sécuriser mon logement",
+          "Tous nos articles",
+          "Produits",
+          "Notices",
+          "Aides aux choix",
+          "Vidéos",
+          "Forum",
+          "FAQ",
+          "Réparation à domicile",
+          "Contact",
+          "Où acheter",
+          "Devis avec un pro",
+          "Mon compte",
+          "Contact",
+          "Particuliers",
+          "Professionnels",
+          "Accueil",
+          "Produits",
+          "Volets roulants"
+        ],
+        "brand": "Somfy",
+        "images": [
+          "/common/img/library//volets-roulants-maison-somfy.jpg",
+          "https://asset.somfy.com/300X300/Image/dc2239ba-7eea-4173-a16e-aa4720644702_visuel-produit-volet-roulant-motorisation-RS100%20io%20-1033115.jpg",
+          "https://asset.somfy.com/350x350/Image/719a32b4-ebe5-4d90-8050-5f5f21e8df9f_1244692_RS100%20SOLAR%20IO%20315%20KIT%20MPBS%201.jpg",
+          "https://asset.somfy.com/350x350/Image/8731d137-0c95-45af-a68e-9ea779cd3b99_RMS%202600_1200x1200.png",
+          "https://asset.somfy.com/350x350/Image/fe15135f-ea16-4e0d-bb5d-a309447617ae_Kit-motorisation-VR-MS-2600-20-Nm.jpg",
+          "https://asset.somfy.com/350x350/Image/037f624f-d36f-43a6-a890-bdea4650a88e_Kit%20de%20remplacement%20io%201200x1200.png",
+          "https://www.somfy.tn/common/img/library//300x300/somfy-packaging-kit-motorisation-RMS1.png",
+          "https://www.somfy.tn/common/img/library//300x300/somfy-packaging-kit-remplacement.png",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+          "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg"
+        ],
+        "specifications": [],
+        "id": "2e39dff8-9dcd-48b0-a8e5-e2a316b69052",
+        "scraped_at": "2026-02-07T20:58:54.452761+00:00",
+        "videos": [
+          {
+            "video_id": "ffbYOieELkw",
+            "url": "https://www.youtube.com/watch?v=ffbYOieELkw",
+            "embed_url": "https://www.youtube.com/embed/ffbYOieELkw",
+            "thumbnail": "https://img.youtube.com/vi/ffbYOieELkw/maxresdefault.jpg"
+          }
+        ],
+        "downloaded_images": [
+          {
+            "original_url": "https://asset.somfy.com/300X300/Image/dc2239ba-7eea-4173-a16e-aa4720644702_visuel-produit-volet-roulant-motorisation-RS100%20io%20-1033115.jpg",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_21226773.jpg",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_21226773.jpg",
+            "size": 10718
+          },
+          {
+            "original_url": "https://asset.somfy.com/350x350/Image/719a32b4-ebe5-4d90-8050-5f5f21e8df9f_1244692_RS100%20SOLAR%20IO%20315%20KIT%20MPBS%201.jpg",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_eceaaf06.jpg",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_eceaaf06.jpg",
+            "size": 12648
+          },
+          {
+            "original_url": "https://asset.somfy.com/350x350/Image/8731d137-0c95-45af-a68e-9ea779cd3b99_RMS%202600_1200x1200.png",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_26a4552e.png",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_26a4552e.png",
+            "size": 9325
+          },
+          {
+            "original_url": "https://asset.somfy.com/350x350/Image/fe15135f-ea16-4e0d-bb5d-a309447617ae_Kit-motorisation-VR-MS-2600-20-Nm.jpg",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_52e40bda.jpg",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_52e40bda.jpg",
+            "size": 9312
+          },
+          {
+            "original_url": "https://asset.somfy.com/350x350/Image/037f624f-d36f-43a6-a890-bdea4650a88e_Kit%20de%20remplacement%20io%201200x1200.png",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_b9b3d5ef.png",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_b9b3d5ef.png",
+            "size": 27213
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/img/library//300x300/somfy-packaging-kit-motorisation-RMS1.png",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_fc8fc755.png",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_fc8fc755.png",
+            "size": 18514
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/img/library//300x300/somfy-packaging-kit-remplacement.png",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_662943da.png",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_662943da.png",
+            "size": 18322
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_34036e25.jpg",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_34036e25.jpg",
+            "size": 6464
+          },
+          {
+            "original_url": "https://www.somfy.tn/common/b2c_v6/assets/img/somfy-group-logo.svg",
+            "local_path": "/app/scraped_data/images/somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_c3da5971.jpg",
+            "filename": "somfy_2e39dff8-9dcd-48b0-a8e5-e2a316b69052_c3da5971.jpg",
+            "size": 6230
+          }
+        ]
+      }
+    ],
+    "somef": [
+      {
+        "source": "somef",
+        "source_url": "https://www.somef.tn/fr/prises/1422-prise-tv-2-modules.html",
+        "name": "Prise TV 2 Modules SYLVIA 43",
+        "sku": "REF° 433091K/2",
+        "short_description": "Prise TV 2 modules, Convient aux câbles : RG6 quad, RG6, RG59, RG178, ... convient à tous câbles avec conducteur intérieur de Ø 0,3 à Ø 1,1 mm (de l'AWG 28 à l'AWG 18)",
+        "meta_description": "Le système 43 propose des plaques au design unique pour s'adapter à tous les styles de décoration, transformant votre espace en un lieu élégant et fonctionnel.\r\nSimplifiez votre vie avec son appareillage pratique tels que les prises USB intégrées, les thermostats et les détecteurs de mouvements.\r\nAjoutez une touche moderne à votre intérieur grâce à cette innovation.",
+        "categories": [
+          "Accueil",
+          "Produits",
+          "Prises et interrupteurs",
+          "Système 43",
+          "Prises"
+        ],
+        "brand": "SOMEF",
+        "images": [
+          "https://www.somef.tn/2208-large_default/prise-tv-2-modules.jpg"
+        ],
+        "specifications": [],
+        "id": "1fd0d869-bc6e-4891-ad41-aba6c44d8b39",
+        "scraped_at": "2026-02-07T20:59:23.423653+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somef.tn/2208-large_default/prise-tv-2-modules.jpg",
+            "local_path": "/app/scraped_data/images/somef_1fd0d869-bc6e-4891-ad41-aba6c44d8b39_b313d8d6.jpg",
+            "filename": "somef_1fd0d869-bc6e-4891-ad41-aba6c44d8b39_b313d8d6.jpg",
+            "size": 70878
+          }
+        ]
+      },
+      {
+        "source": "somef",
+        "source_url": "https://www.somef.tn/fr/prises/1454-carillon-220v.html",
+        "name": "Carillon 220V NERA 43",
+        "sku": "REF° 432032S",
+        "short_description": "Carillon 220V",
+        "meta_description": "Carillon 220V\n",
+        "categories": [
+          "Accueil",
+          "Produits",
+          "Prises et interrupteurs",
+          "Système 43",
+          "Prises"
+        ],
+        "brand": "SOMEF",
+        "images": [
+          "https://www.somef.tn/2306-large_default/carillon-220v.jpg"
+        ],
+        "specifications": [],
+        "id": "15446f0e-021b-4f01-9e5b-13575039a6c9",
+        "scraped_at": "2026-02-07T20:59:25.813671+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somef.tn/2306-large_default/carillon-220v.jpg",
+            "local_path": "/app/scraped_data/images/somef_15446f0e-021b-4f01-9e5b-13575039a6c9_99200578.jpg",
+            "filename": "somef_15446f0e-021b-4f01-9e5b-13575039a6c9_99200578.jpg",
+            "size": 60974
+          }
+        ]
+      },
+      {
+        "source": "somef",
+        "source_url": "https://www.somef.tn/fr/prises/1415-prise-passante-usb-30.html",
+        "name": "Prise passante USB 3.0 SYLVIA 43",
+        "sku": "REF° 433043",
+        "short_description": "Prise USB 3.0 type A femelle-femelle, permet le raccordement de dispositifs USB (imprimante, scanner, disque dur externe…), avec cordon 15cm pour assurer une installation facile et rapide à l’intérieur de la boîte d’encastrement",
+        "meta_description": "Le système 43 propose des plaques au design unique pour s'adapter à tous les styles de décoration, transformant votre espace en un lieu élégant et fonctionnel.\r\nSimplifiez votre vie avec son appareillage pratique tels que les prises USB intégrées, les thermostats et les détecteurs de mouvements.\r\nAjoutez une touche moderne à votre intérieur grâce à cette innovation.",
+        "categories": [
+          "Accueil",
+          "Produits",
+          "Prises et interrupteurs",
+          "Système 43",
+          "Prises"
+        ],
+        "brand": "SOMEF",
+        "images": [
+          "https://www.somef.tn/2189-large_default/prise-passante-usb-30.jpg",
+          "https://www.somef.tn/2187-large_default/prise-passante-usb-30.jpg"
+        ],
+        "specifications": [],
+        "id": "6aea6f1a-76fc-486d-b360-bb115d366ef7",
+        "scraped_at": "2026-02-07T20:59:26.892150+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somef.tn/2189-large_default/prise-passante-usb-30.jpg",
+            "local_path": "/app/scraped_data/images/somef_6aea6f1a-76fc-486d-b360-bb115d366ef7_4959f2e7.jpg",
+            "filename": "somef_6aea6f1a-76fc-486d-b360-bb115d366ef7_4959f2e7.jpg",
+            "size": 39296
+          },
+          {
+            "original_url": "https://www.somef.tn/2187-large_default/prise-passante-usb-30.jpg",
+            "local_path": "/app/scraped_data/images/somef_6aea6f1a-76fc-486d-b360-bb115d366ef7_2ccf7475.jpg",
+            "filename": "somef_6aea6f1a-76fc-486d-b360-bb115d366ef7_2ccf7475.jpg",
+            "size": 31828
+          }
+        ]
+      },
+      {
+        "source": "somef",
+        "source_url": "https://www.somef.tn/fr/interrupteurs/1536-interrupteur-bipolaire-250v-16a.html",
+        "name": "Interrupteur bipolaire 250V - 16A 2 modules NERA 43",
+        "sku": "REF° 432010/2",
+        "short_description": "Interrupteur bipolaire 250V - 16A 2 modules",
+        "meta_description": "Le système 43 propose des plaques au design unique pour s'adapter à tous les styles de décoration, transformant votre espace en un lieu élégant et fonctionnel.\r\nSimplifiez votre vie avec son appareillage pratique tels que les prises USB intégrées, les thermostats et les détecteurs de mouvements.\r\nAjoutez une touche moderne à votre intérieur grâce à cette innovation.",
+        "categories": [
+          "Accueil",
+          "Produits",
+          "Prises et interrupteurs",
+          "Système 43",
+          "Interrupteurs"
+        ],
+        "brand": "SOMEF",
+        "images": [
+          "https://www.somef.tn/2508-large_default/interrupteur-bipolaire-250v-16a.jpg"
+        ],
+        "specifications": [],
+        "id": "d05c7aff-3baf-47b6-adb6-0ff31145ed0b",
+        "scraped_at": "2026-02-07T20:59:27.870676+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somef.tn/2508-large_default/interrupteur-bipolaire-250v-16a.jpg",
+            "local_path": "/app/scraped_data/images/somef_d05c7aff-3baf-47b6-adb6-0ff31145ed0b_5e46a4ce.jpg",
+            "filename": "somef_d05c7aff-3baf-47b6-adb6-0ff31145ed0b_5e46a4ce.jpg",
+            "size": 105775
+          }
+        ]
+      },
+      {
+        "source": "somef",
+        "source_url": "https://www.somef.tn/fr/prises/1048-ronfleur-12v.html",
+        "name": "Ronfleur 12V CLARA 43",
+        "sku": "REF° 431030",
+        "short_description": "Ronfleur 12V",
+        "meta_description": "Le système 43 propose des plaques au design unique pour s'adapter à tous les styles de décoration, transformant votre espace en un lieu élégant et fonctionnel.\r\nSimplifiez votre vie avec son appareillage pratique tels que les prises USB intégrées, les thermostats et les détecteurs de mouvements.\r\nAjoutez une touche moderne à votre intérieur grâce à cette innovation.",
+        "categories": [
+          "Accueil",
+          "Produits",
+          "Prises et interrupteurs",
+          "Système 43",
+          "Prises"
+        ],
+        "brand": "SOMEF",
+        "images": [
+          "https://www.somef.tn/1187-large_default/ronfleur-12v.jpg"
+        ],
+        "specifications": [],
+        "id": "c2b162cd-81c5-4556-9d53-f15c45558e11",
+        "scraped_at": "2026-02-07T20:59:28.731219+00:00",
+        "videos": [],
+        "downloaded_images": [
+          {
+            "original_url": "https://www.somef.tn/1187-large_default/ronfleur-12v.jpg",
+            "local_path": "/app/scraped_data/images/somef_c2b162cd-81c5-4556-9d53-f15c45558e11_362f9249.jpg",
+            "filename": "somef_c2b162cd-81c5-4556-9d53-f15c45558e11_362f9249.jpg",
+            "size": 5977
+          }
+        ]
+      }
+    ]
+  }
+}

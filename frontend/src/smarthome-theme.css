@@ -1,0 +1,190 @@
+/* SmartHome - Brand Theme */
+/* Color palette based on Purple/Teal gradient logo */
+
+:root {
+  /* Primary brand colors - gradient */
+  --smarthome-primary: #7C3AED;
+  --smarthome-secondary: #06B6D4;
+  --smarthome-accent: #8B5CF6;
+  
+  /* Gradient */
+  --smarthome-gradient: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+  --smarthome-gradient-hover: linear-gradient(135deg, #6D28D9 0%, #0891B2 100%);
+  --smarthome-gradient-reverse: linear-gradient(135deg, #06B6D4 0%, #7C3AED 100%);
+  
+  /* Text colors */
+  --smarthome-text-dark: #1F2937;
+  --smarthome-text-gray: #4B5563;
+  --smarthome-text-light: #6B7280;
+  --smarthome-text-muted: #9CA3AF;
+  
+  /* Background colors */
+  --smarthome-bg-white: #FFFFFF;
+  --smarthome-bg-light: #F9FAFB;
+  --smarthome-bg-gray: #F3F4F6;
+  --smarthome-bg-dark: #111827;
+  --smarthome-bg-darker: #0F172A;
+  
+  /* UI colors */
+  --smarthome-border: #E5E7EB;
+  --smarthome-border-light: #F3F4F6;
+  --smarthome-shadow: rgba(124, 58, 237, 0.1);
+  --smarthome-shadow-lg: rgba(124, 58, 237, 0.15);
+  
+  /* Status colors */
+  --smarthome-success: #10B981;
+  --smarthome-warning: #F59E0B;
+  --smarthome-error: #EF4444;
+  --smarthome-info: #3B82F6;
+}
+
+/* Typography */
+.smarthome-brand {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.smarthome-brand-name {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.smarthome-brand-name .smart {
+  color: var(--smarthome-text-gray);
+}
+
+.smarthome-brand-name .home {
+  background: var(--smarthome-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: var(--smarthome-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button styles */
+.btn-smarthome-primary {
+  background: var(--smarthome-gradient);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px var(--smarthome-shadow);
+}
+
+.btn-smarthome-primary:hover {
+  background: var(--smarthome-gradient-hover);
+  box-shadow: 0 6px 20px var(--smarthome-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-smarthome-secondary {
+  background: transparent;
+  color: var(--smarthome-primary);
+  border: 2px solid var(--smarthome-primary);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-smarthome-secondary:hover {
+  background: var(--smarthome-primary);
+  color: white;
+}
+
+/* Card styles */
+.card-smarthome {
+  background: var(--smarthome-bg-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--smarthome-border-light);
+  transition: all 0.3s ease;
+}
+
+.card-smarthome:hover {
+  box-shadow: 0 8px 30px var(--smarthome-shadow);
+  transform: translateY(-4px);
+}
+
+/* Hero section styles */
+.hero-smarthome {
+  background: var(--smarthome-gradient);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-smarthome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* Section backgrounds */
+.section-light {
+  background: var(--smarthome-bg-light);
+}
+
+.section-white {
+  background: var(--smarthome-bg-white);
+}
+
+.section-dark {
+  background: var(--smarthome-bg-dark);
+  color: white;
+}
+
+/* Badge styles */
+.badge-smarthome {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+  color: var(--smarthome-primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Feature icon style */
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--smarthome-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.5); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

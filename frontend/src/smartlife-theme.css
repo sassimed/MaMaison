@@ -1,0 +1,73 @@
+/* Smart Life Custom Theme Colors - Based on Logo Gradient */
+
+:root {
+  /* Primary gradient colors from logo */
+  --smartlife-purple: #9333ea;
+  --smartlife-blue: #3b82f6;
+  --smartlife-cyan: #06b6d4;
+  --smartlife-green: #10b981;
+  
+  /* Gradient definitions */
+  --smartlife-gradient: linear-gradient(135deg, #9333ea 0%, #06b6d4 50%, #10b981 100%);
+  --smartlife-gradient-hover: linear-gradient(135deg, #7e22ce 0%, #0891b2 50%, #059669 100%);
+}
+
+/* Custom gradient backgrounds */
+.bg-smartlife-gradient {
+  background: var(--smartlife-gradient);
+}
+
+.bg-smartlife-gradient-hover:hover {
+  background: var(--smartlife-gradient-hover);
+}
+
+/* Text gradient */
+.text-smartlife-gradient {
+  background: var(--smartlife-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Border gradient effect */
+.border-smartlife-gradient {
+  border-image: var(--smartlife-gradient) 1;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Enhanced button styles */
+.btn-smartlife {
+  background: var(--smartlife-gradient);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(147, 51, 234, 0.2);
+}
+
+.btn-smartlife:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(147, 51, 234, 0.3);
+  opacity: 0.95;
+}
+
+/* Logo animation */
+@keyframes pulse-gradient {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.logo-smartlife {
+  animation: pulse-gradient 3s ease-in-out infinite;
+}
