@@ -206,7 +206,7 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
     # IPs to exclude from rate limiting (localhost, internal networks)
     EXCLUDED_IPS = {'127.0.0.1', 'localhost', '::1', '10.208.138.40'}
     
-    def __init__(self, app, requests_per_minute: int = 100, burst: int = 20):
+    def __init__(self, app, requests_per_minute: int = 300, burst: int = 60):
         super().__init__(app)
         self.rpm = requests_per_minute
         self.burst = burst
