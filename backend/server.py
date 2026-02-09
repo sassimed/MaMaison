@@ -5,6 +5,7 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
+import asyncio
 from pathlib import Path
 from datetime import datetime, timezone
 import uuid
@@ -15,6 +16,10 @@ load_dotenv(ROOT_DIR / '.env')
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
+db = client[os.environ['DB_NAME']]
+
+# Import cache
+from utils.cache import cache, cache_cleanup_task
 db = client[os.environ['DB_NAME']]
 
 # Set database for dependencies
@@ -46,6 +51,8 @@ from routes.direct_messages import router as direct_messages_router
 from routes.import_products import router as import_router
 from routes.data_migration import router as data_migration_router
 from routes.migrations import router as migrations_router
+from routes.analytics import router as analytics_router, create_analytics_indexes
+from routes.logs import router as logs_router, create_logs_indexes
 
 # Set database for cart routes
 set_cart_db(db)
@@ -64,6 +71,34 @@ api_router = APIRouter(prefix="/api")
 @api_router.get("/")
 async def root():
     return {"message": "Smart Life API is running", "version": "1.0.0"}
+
+# Cache management endpoints
+@api_router.get("/cache/stats")
+async def get_cache_stats():
+    """Get cache statistics"""
+    return cache.stats()
+
+@api_router.post("/cache/clear")
+async def clear_cache(pattern: str = None):
+    """Clear cache - optionally by pattern"""
+    if pattern:
+        deleted = await cache.delete_pattern(pattern)
+        return {"message": f"Cleared {deleted} cache entries matching '{pattern}'"}
+    else:
+        await cache.clear()
+        return {"message": "All cache cleared"}
+
+@api_router.post("/cache/clear/categories")
+async def clear_categories_cache():
+    """Clear categories cache"""
+    deleted = await cache.delete_pattern("categories:")
+    return {"message": f"Cleared {deleted} category cache entries"}
+
+@api_router.post("/cache/clear/products")
+async def clear_products_cache():
+    """Clear products cache"""
+    deleted = await cache.delete_pattern("products:")
+    return {"message": f"Cleared {deleted} product cache entries"}
 
 # Route pour initialiser la BD en production (GET pour accès navigateur)
 @api_router.get("/init-database/{secret_key}")
@@ -244,6 +279,8 @@ api_router.include_router(direct_messages_router)
 api_router.include_router(import_router)
 api_router.include_router(data_migration_router)
 api_router.include_router(migrations_router)
+api_router.include_router(analytics_router)
+api_router.include_router(logs_router)
 
 # Endpoint pour télécharger les exports de produits
 @api_router.get("/export/products")
@@ -282,8 +319,42 @@ async def download_catalogue_complet():
         media_type="application/json"
     )
 
+# ============ OBSERVABILITY ENDPOINTS ============
+from utils.observability import metrics as perf_metrics, health_checker, error_tracker, logger as obs_logger
+
+@api_router.get("/health")
+async def health_check():
+    """Comprehensive health check"""
+    return await health_checker.check_all()
+
+@api_router.get("/metrics")
+async def get_perf_metrics():
+    """Get performance metrics"""
+    return {
+        "latency": perf_metrics.get_all_stats(window_seconds=300),
+        "cache": cache.stats(),
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
+
+@api_router.get("/metrics/errors")
+async def get_error_metrics():
+    """Get error summary (admin only)"""
+    return {
+        "recent_errors": error_tracker.get_recent_errors(10),
+        "error_summary": error_tracker.get_error_summary()
+    }
+
 # Include the API router in the main app
 app.include_router(api_router)
+
+# ============ PERFORMANCE MIDDLEWARE ============
+from utils.middleware import PerformanceMiddleware, RateLimitMiddleware
+
+# Add performance monitoring middleware (outermost = first to execute)
+app.add_middleware(PerformanceMiddleware)
+
+# Add rate limiting (100 requests/min per IP, burst of 30)
+app.add_middleware(RateLimitMiddleware, requests_per_minute=100, burst=30)
 
 # CORS middleware
 app.add_middleware(
@@ -301,18 +372,60 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Import index creation utility
+# Import utilities
 from utils.indexes import create_indexes
+from utils.event_queue import event_queue
+from utils.database import ensure_indexes, RECOMMENDED_INDEXES
+
+# Register MongoDB health check
+async def check_mongodb():
+    try:
+        await db.command('ping')
+        return True
+    except:
+        return False
+
+health_checker.register("mongodb", check_mongodb)
 
 @app.on_event("startup")
 async def startup_event():
     logger.info("Smart Life API starting up...")
+    
     # Create all indexes for optimal performance
     await create_indexes(db)
     logger.info("Database indexes created")
+    
+    # Create analytics indexes
+    await create_analytics_indexes()
+    logger.info("Analytics indexes created")
+    
+    # Create logs indexes
+    await create_logs_indexes()
+    logger.info("Logs indexes created")
+    
+    # Ensure performance indexes
+    await ensure_indexes(db, ["products", "orders", "users", "analytics_events"])
+    logger.info("Performance indexes ensured")
+    
+    # Start cache cleanup background task
+    asyncio.create_task(cache_cleanup_task())
+    logger.info("Cache cleanup task started")
+    
+    # Start event queue for async analytics
+    await event_queue.start()
+    logger.info("Event queue started")
+    
+    obs_logger.info("API startup complete", type="startup")
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
-    logger.info("Shutting down database connection...")
+    logger.info("Shutting down...")
+    
+    # Stop event queue gracefully
+    await event_queue.stop()
+    logger.info("Event queue stopped")
+    
+    # Close database connection
     client.close()
+    logger.info("Database connection closed")
 

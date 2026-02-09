@@ -1130,3 +1130,152 @@ async def reset_session(session_id: str):
     await db.chat_history.delete_many({"session_id": session_id})
     await db.chat_sessions_v3.delete_many({"session_id": session_id})
     return {"new_session_id": str(uuid.uuid4()), "message": "Session réinitialisée"}
+
+
+
+# ============ ADMIN STATS & CONVERSATIONS ============
+
+@router.get("/admin/stats")
+async def get_chatbot_stats(range: str = "7d"):
+    """Statistiques du chatbot pour l'admin"""
+    from datetime import timedelta
+    
+    # Parse date range
+    days = 7
+    if range == "24h":
+        days = 1
+    elif range == "7d":
+        days = 7
+    elif range == "30d":
+        days = 30
+    elif range == "90d":
+        days = 90
+    
+    start_date = datetime.now(timezone.utc) - timedelta(days=days)
+    
+    # Count total conversations
+    total_conversations = await db.chat_sessions_v3.count_documents({
+        "created_at": {"$gte": start_date}
+    })
+    
+    # Count total messages
+    total_messages = await db.chat_history.count_documents({
+        "timestamp": {"$gte": start_date}
+    })
+    
+    # Count unique users
+    unique_users = len(await db.chat_sessions_v3.distinct("user_id", {
+        "created_at": {"$gte": start_date}
+    }))
+    
+    # Get conversations per day
+    pipeline = [
+        {"$match": {"created_at": {"$gte": start_date}}},
+        {"$group": {
+            "_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$created_at"}},
+            "count": {"$sum": 1}
+        }},
+        {"$sort": {"_id": 1}}
+    ]
+    daily_stats = await db.chat_sessions_v3.aggregate(pipeline).to_list(None)
+    
+    # Get mode distribution
+    mode_pipeline = [
+        {"$match": {"created_at": {"$gte": start_date}}},
+        {"$group": {
+            "_id": "$mode",
+            "count": {"$sum": 1}
+        }}
+    ]
+    mode_stats = await db.chat_sessions_v3.aggregate(mode_pipeline).to_list(None)
+    
+    return {
+        "total_conversations": total_conversations,
+        "total_messages": total_messages,
+        "unique_users": unique_users,
+        "daily_conversations": daily_stats,
+        "mode_distribution": {m["_id"]: m["count"] for m in mode_stats if m["_id"]},
+        "date_range": range
+    }
+
+
+@router.get("/admin/conversations")
+async def get_admin_conversations(range: str = "7d", limit: int = 50):
+    """Liste des conversations récentes pour l'admin"""
+    from datetime import timedelta
+    
+    # Parse date range
+    days = 7
+    if range == "24h":
+        days = 1
+    elif range == "7d":
+        days = 7
+    elif range == "30d":
+        days = 30
+    elif range == "90d":
+        days = 90
+    elif range == "all":
+        days = 3650  # 10 years
+    
+    start_date = datetime.now(timezone.utc) - timedelta(days=days)
+    
+    # Get recent sessions - include sessions without created_at
+    sessions = await db.chat_sessions_v3.find({
+        "$or": [
+            {"created_at": {"$gte": start_date}},
+            {"created_at": {"$exists": False}},
+            {"created_at": None}
+        ]
+    }).sort("created_at", -1).limit(limit).to_list(limit)
+    
+    conversations = []
+    for session in sessions:
+        session_id = session.get("session_id")
+        
+        # Count messages in this session
+        message_count = await db.chat_history.count_documents({"session_id": session_id})
+        
+        # Skip sessions with no messages
+        if message_count == 0:
+            continue
+        
+        # Get first and last message
+        first_msg = await db.chat_history.find_one(
+            {"session_id": session_id},
+            sort=[("timestamp", 1)]
+        )
+        last_msg = await db.chat_history.find_one(
+            {"session_id": session_id},
+            sort=[("timestamp", -1)]
+        )
+        
+        # Get user info if available
+        user_info = None
+        user_id = session.get("user_id")
+        if user_id:
+            user = await db.users.find_one({"id": user_id}, {"_id": 0, "email": 1, "name": 1})
+            if user:
+                user_info = user
+        
+        created_at = session.get("created_at")
+        last_activity = last_msg.get("timestamp") if last_msg else None
+        
+        conversations.append({
+            "session_id": session_id,
+            "user_id": user_id,
+            "user_info": user_info,
+            "mode": session.get("mode"),
+            "language": session.get("language"),
+            "phase": session.get("phase"),
+            "message_count": message_count,
+            "created_at": created_at.isoformat() if created_at and hasattr(created_at, 'isoformat') else str(created_at) if created_at else None,
+            "last_activity": last_activity.isoformat() if last_activity and hasattr(last_activity, 'isoformat') else str(last_activity) if last_activity else None,
+            "first_message": first_msg.get("content", "")[:100] if first_msg else None,
+            "last_message": last_msg.get("content", "")[:100] if last_msg else None
+        })
+    
+    return {
+        "conversations": conversations,
+        "total": len(conversations),
+        "date_range": range
+    }

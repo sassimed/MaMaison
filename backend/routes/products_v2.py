@@ -1,6 +1,7 @@
 """
 Products API - v2 Gemini2 Schema
 Endpoints for product listing with hierarchical category filtering
+With caching for improved performance
 """
 
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -11,6 +12,11 @@ from datetime import datetime, timezone
 import os
 import re
 from dotenv import load_dotenv
+
+# Import cache utilities
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.cache import cache, CacheTTL
 
 load_dotenv()
 
@@ -153,6 +159,7 @@ async def get_products(
 ):
     """
     Get products with v2 hierarchical category filtering.
+    Results are cached for frequently accessed queries.
     
     Category filtering:
     - category: Filters by category_path_ids (includes all subcategories)
@@ -169,6 +176,17 @@ async def get_products(
             page = int(cursor.replace("page_", ""))
         except ValueError:
             page = 1
+    
+    # Check cache for common queries (no search, first 3 pages)
+    can_cache = (not q and page <= 3 and not price_min and not price_max 
+                 and not technologies and not technology and not connectivity and not brand)
+    cache_key = None
+    
+    if can_cache:
+        cache_key = f"products:list:{category}:{category_id}:{subcategory_id}:{sort}:{page}:{limit}:{has_image}:{include_no_image}"
+        cached_result = await cache.get(cache_key)
+        if cached_result is not None:
+            return cached_result
     
     # Build query
     query = {"active": True}
@@ -236,7 +254,57 @@ async def get_products(
     if q:
         search_term = q.strip()
         
-        # Build search query - include model_code
+        # Use MongoDB text search index for better performance
+        # Fall back to regex for short queries (< 3 chars) where text search is less effective
+        if len(search_term) >= 3:
+            # Try text search first (uses index, much faster)
+            text_query = query.copy()
+            text_query["$text"] = {"$search": search_term}
+            
+            # Check if we get results with text search
+            text_count = await db.products.count_documents(text_query)
+            
+            if text_count > 0:
+                # Use text search with relevance scoring
+                total = text_count
+                skip = (page - 1) * limit
+                total_pages = (total + limit - 1) // limit
+                
+                pipeline = [
+                    {"$match": text_query},
+                    {"$addFields": {
+                        "text_score": {"$meta": "textScore"},
+                        "relevance_score": {
+                            "$add": [
+                                {"$multiply": [{"$meta": "textScore"}, 10]},
+                                {"$multiply": [{"$ifNull": ["$ranking.quality_score", 0]}, 0.1]}
+                            ]
+                        }
+                    }},
+                    {"$sort": {"relevance_score": -1, "_id": 1}},
+                    {"$skip": skip},
+                    {"$limit": limit},
+                    {"$project": {"_id": 0, "text_score": 0, "relevance_score": 0}}
+                ]
+                
+                products = await db.products.aggregate(pipeline).to_list(length=limit)
+                
+                result = {
+                    "products": products,
+                    "total": total,
+                    "page": page,
+                    "limit": limit,
+                    "total_pages": total_pages,
+                    "has_next": page < total_pages,
+                    "has_prev": page > 1,
+                    "search_method": "text_index"
+                }
+                
+                # Cache result
+                await cache.set(cache_key, result, ttl=CacheTTL.SHORT)
+                return result
+        
+        # Fallback to regex search (slower but more flexible)
         query["$or"] = query.get("$or", []) + [
             {"model_code": {"$regex": search_term, "$options": "i"}},
             {"sku": {"$regex": search_term, "$options": "i"}},
@@ -423,6 +491,10 @@ async def get_products(
             "next_cursor": f"page_{page + 1}" if page < total_pages else None
         }
     }
+    
+    # Cache the result if cacheable (5 minutes)
+    if cache_key:
+        await cache.set(cache_key, response, CacheTTL.MEDIUM)
     
     return response
 

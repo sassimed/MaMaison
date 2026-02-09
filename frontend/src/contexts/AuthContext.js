@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import authService from '../services/authService';
+import analytics from '../services/analytics';
 
 const AuthContext = createContext(null);
 
@@ -20,6 +21,9 @@ export const AuthProvider = ({ children }) => {
     try {
       const userData = await authService.login(email, password);
       setUser(userData);
+      // Track login event
+      analytics.login(userData.id, 'email');
+      analytics.setUser(userData.id);
       return { success: true };
     } catch (error) {
       console.error('Login error:', error);
@@ -45,6 +49,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    // Track logout event
+    if (user?.id) {
+      analytics.logout(user.id);
+    }
+    analytics.clearUser();
     authService.logout();
     setUser(null);
   };
@@ -54,6 +63,9 @@ export const AuthProvider = ({ children }) => {
     setUser(userData);
     if (userData) {
       authService.storeUser(userData);
+      // Track Google OAuth login
+      analytics.login(userData.id, 'google');
+      analytics.setUser(userData.id);
     }
   };
 

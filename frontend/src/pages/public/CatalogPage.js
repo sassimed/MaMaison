@@ -4,6 +4,7 @@ import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import { useAuth } from '../../contexts/AuthContext';
 import api from '../../services/api';
+import analytics from '../../services/analytics';
 import { 
   ShoppingCart, Heart, Check, Search, SlidersHorizontal, X, ArrowUp, Loader2, AlertCircle, ArrowUpDown,
   Camera, Bell, Lightbulb, Cpu, ToggleRight, Plug, Blinds, Monitor, Wifi, Shield, Home, Package, Play,
@@ -504,6 +505,12 @@ const CatalogPage = () => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     productCache.delete(cacheKey);
+    
+    // Track search event
+    if (filters.q && filters.q.trim()) {
+      analytics.search(filters.q.trim());
+    }
+    
     updateURL(filters);
   };
 
@@ -543,6 +550,12 @@ const CatalogPage = () => {
     try {
       await api.post('/cart', { product_id: productId, quantity: 1 });
       setCartItems([...cartItems, productId]);
+      
+      // Track add to cart event
+      const product = products.find(p => p.id === productId);
+      if (product) {
+        analytics.addToCart(productId, product.name, 1);
+      }
     } catch (error) {
       console.error('Error adding to cart:', error);
       alert('Erreur lors de l\'ajout au panier');

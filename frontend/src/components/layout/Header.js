@@ -19,14 +19,14 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-3">
-        <div className="flex justify-between items-center">
-          {/* Logo MyDar */}
-          <Link to="/" className="flex items-center flex-shrink-0" data-testid="header-logo">
+      <nav className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo MyDar - larger logo that extends beyond header */}
+          <Link to="/" className="flex items-center flex-shrink-0 -my-4" data-testid="header-logo">
             <img 
-              src="/mamaison-logo.png" 
-              alt="MaMaison" 
-              className="h-16 md:h-20 w-auto"
+              src="/mydar-logo.png" 
+              alt="MyDar" 
+              className="h-24 w-auto"
             />
           </Link>
 

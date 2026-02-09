@@ -5,6 +5,113 @@ MyDar est une plateforme e-commerce tunisienne spécialisée dans les produits d
 
 ## What's Been Implemented
 
+### ✅ Session du 9 Février 2026 - Optimisation Performance Marketplace
+
+**Optimisations complètes pour supporter un trafic élevé de marketplace.**
+
+#### A) Séparation Transactionnel vs Events/Analytics
+- **Fire-and-forget tracking**: L'endpoint `/api/analytics/track` retourne immédiatement, traitement en arrière-plan
+- **Queue asynchrone**: `/app/backend/utils/event_queue.py` - Batch writes, back-pressure handling
+- **Background Tasks**: Géolocalisation et écriture DB en arrière-plan
+
+#### B) Observabilité
+- **Logs structurés JSON**: `/app/backend/utils/observability.py` - StructuredLogger avec contexte
+- **Métriques de latence**: Tracking P50/P95/P99 par endpoint
+- **Health Check**: `GET /api/health` - État MongoDB + services
+- **Metrics Dashboard**: `GET /api/metrics` - Stats latence et cache
+- **Error Tracking**: Agrégation des erreurs avec contexte
+
+#### C) Multi-tenant Ready
+- **Module multitenancy**: `/app/backend/utils/multitenancy.py`
+- **TenantContext**: Scoping automatique des requêtes
+- **Permissions granulaires**: RBAC avec rôles owner/admin/manager/seller/viewer
+- **Index tenant_id**: Prêt pour la séparation des données vendeurs
+
+#### D) Performance Backend
+- **Performance Middleware**: `/app/backend/utils/middleware.py`
+  - Request timing et logging
+  - Rate limiting (100 req/min, burst 30)
+  - Request ID tracking
+- **MongoDB optimisé**: `/app/backend/utils/database.py`
+  - Connection pooling (10-100 connections)
+  - Compression réseau (zstd, snappy, zlib)
+  - Read preference support
+  - Projections optimisées
+
+#### E) Performance Frontend
+- **Code Splitting**: Lazy loading de ~40 composants
+- **Suspense**: Loading states avec fallback
+- **Hooks performance**: `/app/frontend/src/hooks/usePerformance.js`
+  - useDebounce, useThrottle
+  - useIntersectionObserver (lazy loading)
+  - useVirtualList (listes virtualisées)
+- **Image optimisée**: `/app/frontend/src/components/OptimizedImage.js`
+
+**Fichiers créés:**
+- `/app/backend/utils/observability.py` - Logs structurés et métriques
+- `/app/backend/utils/event_queue.py` - Queue asynchrone
+- `/app/backend/utils/middleware.py` - Performance middleware
+- `/app/backend/utils/database.py` - MongoDB optimisé
+- `/app/backend/utils/multitenancy.py` - Support multi-tenant
+- `/app/frontend/src/hooks/usePerformance.js` - Hooks performance
+- `/app/frontend/src/components/OptimizedImage.js` - Image lazy loading
+
+**Métriques atteintes:**
+- TTFB: ~127ms
+- DOM Content Loaded: ~597ms
+- Health check: <1ms
+
+---
+
+### ✅ Session du 9 Février 2026 - Module Analytics & Tracking Complet
+
+**Nouveau module complet de suivi analytique avec interface d'administration.**
+
+**Fonctionnalités implémentées:**
+
+1. **Tracking des événements** (Backend: `/app/backend/routes/analytics.py`)
+   - `POST /api/analytics/track` - Enregistre tous types d'événements (OPTIMISÉ: fire-and-forget)
+   - `POST /api/analytics/track/batch` - Batch tracking pour sync offline
+   - Types supportés: page_view, product_view, search, add_to_cart, remove_from_cart, checkout_start, checkout_complete, login, logout, signup, click, error, chat_start, chat_message
+   - Géolocalisation IP via ip-api.com (en arrière-plan)
+   - Parsing User-Agent (device, browser, OS)
+   - Support UTM parameters
+
+2. **Utilisateurs en ligne en temps réel**
+   - `POST /api/analytics/heartbeat` - Mise à jour statut utilisateur (appelé toutes les 60s)
+   - `GET /api/analytics/admin/online-users` - Liste des utilisateurs actifs (dernières 5 min)
+   - TTL auto-expiration après 10 minutes d'inactivité
+
+3. **Statistiques administrateur**
+   - `GET /api/analytics/admin/stats` - Statistiques globales (visiteurs, sessions, pages vues)
+   - `GET /api/analytics/admin/events` - Journal d'audit filtrable
+   - `GET /api/analytics/admin/user-timeline/{user_id}` - Timeline d'un utilisateur
+   - `GET /api/analytics/admin/top-products` - Produits les plus consultés
+   - `GET /api/analytics/admin/search-terms` - Termes de recherche populaires
+
+4. **Rétention des données**
+   - `DELETE /api/analytics/admin/purge-old-data` - Purge des données > 90 jours
+   - Index TTL auto-cleanup sur analytics_events (90 jours)
+
+5. **Interface Admin** (`/dashboard/admin/analytics`)
+   - Onglet "Vue d'ensemble": Cartes stats, graphique journalier, répartition appareils/navigateurs/pays
+   - Onglet "Journal d'audit": Tableau des événements avec filtres
+   - Onglet "Top Produits": Produits les plus vus + recherches populaires
+   - Onglet "Timeline Utilisateur": Historique complet d'un utilisateur
+
+6. **Tracking Frontend automatique** (`/app/frontend/src/services/analytics.js`)
+   - PageTracker: Track automatique des pages visitées
+   - Login/Logout tracking dans AuthContext
+   - Product view tracking dans ProductDetailPage
+   - Search tracking dans CatalogPage
+   - Add to cart tracking
+
+**Tests validés:**
+- ✅ 25/25 tests backend passent
+- ✅ Frontend 100% fonctionnel
+- ✅ Tracking en temps réel vérifié
+
+---
 
 ### ✅ Session du 8 Février 2026 - Correction Filtrage par Catégorie
 
@@ -196,6 +303,7 @@ Bienvenue 👋 / Mar7bé 👋
 ## Current Status
 
 ### ✅ Resolved
+- **Module Analytics & Tracking complet** (testé et fonctionnel)
 - Interface admin de sélection du modèle IA (testé et fonctionnel)
 - Chatbot V3 avec flux guidé bilingue
 - Restauration des 2737 produits dans MongoDB
@@ -204,9 +312,9 @@ Bienvenue 👋 / Mar7bé 👋
 1. **⚠️ Prix manquants** - TOUS les 2737 produits n'ont pas de prix → E-commerce non viable
 
 ### 🟠 P1 - High Priority  
-1. Créer vraie API suivi commande (`/api/orders/{order_id}`)
-2. Filtres facettes sur page catalogue (marque, connectivité)
-3. 82 produits Somfy sans images
+1. Filtres facettes sur page catalogue (marque, connectivité)
+2. 82 produits Somfy sans images
+3. Ajouter `test_data_coherence.py` au script `run_tests.sh`
 
 ### 🟡 P2 - Medium Priority
 1. Drag-and-drop réorganisation sous-catégories admin
@@ -231,6 +339,10 @@ Bienvenue 👋 / Mar7bé 👋
 | 👤 Client | client@mydar.tn | client123 |
 
 ## Key API Endpoints
+- `POST /api/analytics/track` - Tracking des événements utilisateur
+- `GET /api/analytics/admin/stats` - Statistiques globales
+- `GET /api/analytics/admin/online-users` - Utilisateurs en ligne
+- `GET /api/analytics/admin/events` - Journal d'audit
 - `POST /api/chatbot/chat` - Endpoint principal chatbot (V3)
 - `GET /api/chatbot/admin/ai-models` - Liste modèles IA disponibles
 - `POST /api/chatbot/admin/ai-model` - Changer le modèle IA actif

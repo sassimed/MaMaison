@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { Menu, X, ChevronLeft, ChevronRight, Home, User, ShoppingCart, Heart, Package, FileText, Calendar, MessageSquare, Building, Users, Settings, BarChart3, FolderOpen, LogOut, Megaphone, Send, Store, Bot } from 'lucide-react';
+import { Menu, X, ChevronLeft, ChevronRight, Home, User, ShoppingCart, Heart, Package, FileText, Calendar, MessageSquare, Building, Users, Settings, BarChart3, FolderOpen, LogOut, Megaphone, Send, Store, Bot, Activity, AlertTriangle } from 'lucide-react';
 import NotificationBell from '../notifications/NotificationBell';
 import PushNotificationToggle from '../notifications/PushNotificationToggle';
 import api from '../../services/api';
@@ -136,15 +136,15 @@ function DashboardLayout({ children }) {
         <NavLink to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
           {(sidebarOpen || isMobile) ? (
             <img 
-              src="/mamaison-logo.png" 
-              alt="MaMaison" 
-              className="h-14 w-auto"
+              src="/mydar-logo.png" 
+              alt="MyDar" 
+              className="h-16 w-auto"
             />
           ) : (
             <img 
-              src="/mamaison-logo.png" 
-              alt="MaMaison" 
-              className="h-10 w-auto"
+              src="/mydar-logo.png" 
+              alt="MyDar" 
+              className="h-12 w-auto"
             />
           )}
         </NavLink>
@@ -206,6 +206,8 @@ function DashboardLayout({ children }) {
             <NavItem to="/dashboard/admin/purchase-requests" icon={<ShoppingCart className="w-5 h-5 flex-shrink-0" />} label="Demandes d'Achat" testId="nav-admin-purchases" />
             <NavItem to="/dashboard/admin/annonces" icon={<Megaphone className="w-5 h-5 flex-shrink-0" />} label="Annonces" testId="nav-admin-annonces" />
             <NavItem to="/dashboard/admin/chatbot" icon={<Bot className="w-5 h-5 flex-shrink-0" />} label="Chatbot IA" testId="nav-admin-chatbot" />
+            <NavItem to="/dashboard/admin/analytics" icon={<Activity className="w-5 h-5 flex-shrink-0" />} label="Analytics" testId="nav-admin-analytics" />
+            <NavItem to="/dashboard/admin/logs" icon={<AlertTriangle className="w-5 h-5 flex-shrink-0" />} label="Logs & Erreurs" testId="nav-admin-logs" />
             <NavItem to="/dashboard/admin/statistics" icon={<BarChart3 className="w-5 h-5 flex-shrink-0" />} label="Statistiques" testId="nav-admin-statistics" />
           </React.Fragment>
         )}
@@ -294,9 +296,9 @@ function DashboardLayout({ children }) {
             <Menu className="w-6 h-6" />
           </button>
           <img 
-            src="/mamaison-logo.png" 
-            alt="MaMaison" 
-            className="h-10 w-auto"
+            src="/mydar-logo.png" 
+            alt="MyDar" 
+            className="h-12 w-auto"
           />
           <div className="flex items-center gap-2">
             <NotificationBell />

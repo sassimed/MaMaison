@@ -1,6 +1,7 @@
 """
 Categories API - v2 Gemini2 Schema
 Endpoints for hierarchical category navigation
+With caching for improved performance
 """
 
 from fastapi import APIRouter, HTTPException, Query
@@ -9,6 +10,11 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 import os
 from dotenv import load_dotenv
+
+# Import cache utilities
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.cache import cache, cached, CacheTTL
 
 load_dotenv()
 
@@ -28,14 +34,8 @@ def serialize_id(value):
     return value
 
 
-@router.get("")
-async def get_categories(
-    parent_id: Optional[str] = Query(None, description="Filter by parent category ID (null for root categories)"),
-    include_children: bool = Query(True, description="Include child categories and subcategories")
-):
-    """
-    Get all categories or filter by parent.
-    """
+async def _get_categories_cached(parent_id: Optional[str], include_children: bool):
+    """Internal function to fetch categories - results are cached"""
     query = {}
     
     if parent_id is None or parent_id == "null":
@@ -129,12 +129,45 @@ async def get_categories(
         
         result.append(cat_data)
     
-    return result  # Return as array for compatibility
+    return result
+
+
+@router.get("")
+async def get_categories(
+    parent_id: Optional[str] = Query(None, description="Filter by parent category ID (null for root categories)"),
+    include_children: bool = Query(True, description="Include child categories and subcategories")
+):
+    """
+    Get all categories or filter by parent.
+    Results are cached for 10 minutes.
+    """
+    # Create cache key
+    cache_key = f"categories:list:{parent_id}:{include_children}"
+    
+    # Try to get from cache
+    cached_result = await cache.get(cache_key)
+    if cached_result is not None:
+        return cached_result
+    
+    # Fetch from database
+    result = await _get_categories_cached(parent_id, include_children)
+    
+    # Cache for 10 minutes
+    await cache.set(cache_key, result, CacheTTL.LONG)
+    
+    return result
 
 
 @router.get("/tree")
 async def get_category_tree():
-    """Get full category tree structure"""
+    """Get full category tree structure - cached for 30 minutes"""
+    cache_key = "categories:tree"
+    
+    # Try cache first
+    cached_result = await cache.get(cache_key)
+    if cached_result is not None:
+        return cached_result
+    
     all_categories = await db.categories.find({"is_active": True}).sort("label", 1).to_list(None)
     
     cat_map = {}
@@ -170,7 +203,12 @@ async def get_category_tree():
                 if cat_map.get(cat_slug):
                     parent["children"].append(cat_map[cat_slug])
     
-    return {"tree": roots}
+    result = {"tree": roots}
+    
+    # Cache for 30 minutes
+    await cache.set(cache_key, result, CacheTTL.VERY_LONG)
+    
+    return result
 
 
 @router.get("/{category_id}")

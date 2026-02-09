@@ -4,6 +4,7 @@ import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import { useAuth } from '../../contexts/AuthContext';
 import api from '../../services/api';
+import analytics from '../../services/analytics';
 import { ShoppingCart, Heart, ChevronLeft, Download, Play, FileText, Book, Check, Wifi, Cpu, Star, MessageSquare, TrendingUp, Package, Copy, Bot } from 'lucide-react';
 import { StarRating, RatingDistribution, ReviewCard, ReviewForm } from '../../components/reviews/StarRating';
 import { ProductSEO } from '../../components/SEO';
@@ -115,6 +116,9 @@ function ProductDetailPage() {
         const prodRes = await api.get('/products/' + productId);
         const p = prodRes.data;
         setProduct(p);
+        
+        // Track product view
+        analytics.productView(p.id, p.name);
         
         // Build image list
         const imgs = [];

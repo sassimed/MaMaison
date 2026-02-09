@@ -14,7 +14,7 @@ export function SEO({
   type = 'website',
   noindex = false
 }) {
-  const siteUrl = process.env.REACT_APP_SITE_URL || 'https://smartshop-ai-19.preview.emergentagent.com';
+  const siteUrl = process.env.REACT_APP_SITE_URL || 'https://metricshub-7.preview.emergentagent.com';
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 

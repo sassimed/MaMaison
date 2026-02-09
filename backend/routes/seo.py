@@ -6,7 +6,7 @@ from utils.dependencies import get_db
 
 router = APIRouter(tags=["SEO"])
 
-SITE_URL = os.environ.get("SITE_URL", "https://smartshop-ai-19.preview.emergentagent.com")
+SITE_URL = os.environ.get("SITE_URL", "https://metricshub-7.preview.emergentagent.com")
 
 @router.get("/sitemap.xml", response_class=PlainTextResponse)
 async def get_sitemap():
